@@ -1,0 +1,317 @@
+{
+    "eClass": "net.cloudml.core:CloudMLModel",
+    "name": "Storm",
+    "providers": [
+        {
+            "credentials": "credentialsOpenstack.properties",
+            "eClass": "net.cloudml.core:Provider",
+            "name": "openstack",
+        }
+    ],
+    "vms": [
+        {
+            "eClass": "net.cloudml.core:VM",
+            "is64os": true,
+            "location": "eu-west-1",
+            "name": "storm_nimbus_host",
+            "os": "ubuntu",
+            "privateKey": "key.pem",
+            "provider": "providers[openstack]",
+            "providerSpecificTypeName": "m1.medium",
+            "securityGroup": "default",
+            "sshKey": "key",
+            "providedExecutionPlatforms": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatform",
+                    "name": "storm_nimbus_host_OpenStack",
+                    "offers": [
+                        {
+                            "eClass": "net.cloudml.core:Property",
+                            "name": "OS",
+                            "value": "Ubuntu"
+                        }
+                    ],
+                    "owner": "vms[storm_nimbus_host]"
+                }
+            ]
+        },
+        {
+            "eClass": "net.cloudml.core:VM",
+            "is64os": true,
+            "location": "eu-west-1",
+            "name": "storm_host",
+            "os": "ubuntu",
+            "privateKey": "key.pem",
+            "provider": "providers[openstack]",
+            "providerSpecificTypeName": "m1.medium",
+            "securityGroup": "default", 
+            "sshKey": "key",
+            "providedExecutionPlatforms": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatform",
+                    "name": "storm_host_OpenStack",
+                    "offers": [
+                        {
+                            "eClass": "net.cloudml.core:Property",
+                            "name": "OS",
+                            "value": "Ubuntu"
+                        }
+                    ],
+                    "owner": "vms[storm_host]"
+                }
+            ]
+        },
+        {
+            "eClass": "net.cloudml.core:VM",
+            "is64os": true,
+            "location": "eu-west-1",
+            "name": "zookeeper_host",
+            "os": "ubuntu",
+            "privateKey": "key.pem",
+            "provider": "providers[openstack]",
+            "providerSpecificTypeName": "m1.medium",
+            "securityGroup": "default", 
+            "sshKey": "key",
+            "providedExecutionPlatforms": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatform",
+                    "name": "zookeeper_host_OpenStack",
+                    "offers": [
+                        {
+                            "eClass": "net.cloudml.core:Property",
+                            "name": "OS",
+                            "value": "Ubuntu"
+                        }
+                    ],
+                    "owner": "vms[zookeeper_host]"
+                }
+            ]
+        }
+    ],
+    "vmInstances": [
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "storm_nimbus_host_instance1",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "storm_nimbus_host_OpenStack_instance",
+                    "owner": "vmInstances[storm_nimbus_host_instance1]",
+                    "type": "vms[storm_nimbus_host]/providedExecutionPlatforms[storm_nimbus_host_OpenStack]"
+                }
+            ],
+            "type": "vms[storm_nimbus_host]"
+        },
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "storm_nimbus_host_instance2",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "storm_nimbus_host_OpenStack_instance",
+                    "owner": "vmInstances[storm_nimbus_host_instance2]",
+                    "type": "vms[storm_nimbus_host]/providedExecutionPlatforms[storm_nimbus_host_OpenStack]"
+                }
+            ],
+            "type": "vms[storm_nimbus_host]"
+        },
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "storm_nimbus_host_instance3",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "storm_nimbus_host_OpenStack_instance",
+                    "owner": "vmInstances[storm_nimbus_host_instance3]",
+                    "type": "vms[storm_nimbus_host]/providedExecutionPlatforms[storm_nimbus_host_OpenStack]"
+                }
+            ],
+            "type": "vms[storm_nimbus_host]"
+        },
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "storm_host_instance1",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "storm_host_OpenStack_instance",
+                    "owner": "vmInstances[storm_host_instance1]",
+                    "type": "vms[storm_host]/providedExecutionPlatforms[storm_host_OpenStack]"
+                }
+            ],
+            "type": "vms[storm_host]"
+        },
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "storm_host_instance2",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "storm_host_OpenStack_instance",
+                    "owner": "vmInstances[storm_host_instance2]",
+                    "type": "vms[storm_host]/providedExecutionPlatforms[storm_host_OpenStack]"
+                }
+            ],
+            "type": "vms[storm_host]"
+        },
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "storm_host_instance3",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "storm_host_OpenStack_instance",
+                    "owner": "vmInstances[storm_host_instance3]",
+                    "type": "vms[storm_host]/providedExecutionPlatforms[storm_host_OpenStack]"
+                }
+            ],
+            "type": "vms[storm_host]"
+        },
+        {
+            "eClass": "net.cloudml.core:NodeInstance",
+            "name": "zookeeper_host_instance",
+            "providedExecutionPlatformInstances": [
+                {
+                    "eClass": "net.cloudml.core:ProvidedExecutionPlatformInstance",
+                    "name": "zookeeper_host_OpenStack_instance",
+                    "owner": "vmInstances[zookeeper_host_instance1]",
+                    "type": "vms[zookeeper_host]/providedExecutionPlatforms[zookeeper_host_OpenStack]"
+                }
+            ],
+            "type": "vms[zookeeper_host]"
+        }
+    ],
+    "internalComponents": [
+        {
+            "eClass": "net.cloudml.core:InternalComponent",
+            "name": "storm_nimbus",
+            "requiredExecutionPlatform": {
+                "eClass": "net.cloudml.core:RequiredExecutionPlatform",
+                "name": "storm_nimbus_RequiredHost",
+                "owner": "internalComponents[storm_nimbus]"
+            },
+            "resources": [
+                {
+                    "eClass": "net.cloudml.core:Resource",
+                    "name": "deploymentScript",
+                    "installCommand": "//content of scripts/connect_storm_to_nimbus.sh// ;
+                    //content of scripts/connect_storm_to_zookeeper.sh//"
+                }
+            ]
+        },
+        {
+            "eClass": "net.cloudml.core:InternalComponent",
+            "name": "zookeeper",
+            "requiredExecutionPlatform": {
+                "eClass": "net.cloudml.core:RequiredExecutionPlatform",
+                "name": "zookeeper_RequiredHost",
+                "owner": "internalComponents[zookeeper]"
+            },
+            "resources": [
+                {
+                    "eClass": "net.cloudml.core:Resource",
+                    "name": "deploymentScript",
+                    "installCommand": "//content of scripts/connect_zookeeper_servers.sh// ;
+                    //content scripts/configure_hosts.sh//"
+                }
+            ]
+        },
+        {
+            "eClass": "net.cloudml.core:InternalComponent",
+            "name": "storm",
+            "requiredExecutionPlatform": {
+                "eClass": "net.cloudml.core:RequiredExecutionPlatform",
+                "name": "storm_RequiredHost",
+                "owner": "internalComponents[storm]"
+            },
+            "resources": [
+                {
+                    "eClass": "net.cloudml.core:Resource",
+                    "name": "deploymentScript",
+                    "installCommand": "//content of scripts/connect_storm_to_zookeeper.sh// ;
+                    //content of scripts/connect_storm_to_nimbus.sh// ;
+                    //content of scripts/configure_hosts.sh//"
+                }
+            ]
+        }
+    ],
+    "internalComponentInstances": [
+        {
+            "eClass": "net.cloudml.core:InternalComponentInstance",
+            "name": "zookeeperInstance",
+            "requiredExecutionPlatformInstance": {
+                "eClass": "net.cloudml.core:RequiredExecutionPlatformInstance",
+                "name": "zookeeper_RequiredHostInstance",
+                "owner": "internalComponentInstances[appInstance]",
+                "type": "internalComponents[zookeeper]/requiredExecutionPlatform[zookeeper_RequiredHost]"
+            },
+            "type": "internalComponents[zookeeper]"
+        },
+        {
+            "eClass": "net.cloudml.core:InternalComponentInstance",
+            "name": "stormInstance",
+            "requiredExecutionPlatformInstance": {
+                "eClass": "net.cloudml.core:RequiredExecutionPlatformInstance",
+                "name": "storm_RequiredHostInstance",
+                "owner": "internalComponentInstances[stormInstance]",
+                "type": "internalComponents[storm]/requiredExecutionPlatform[storm_RequiredHost]"
+            },
+            "type": "internalComponents[storm]"
+        },
+        {
+            "eClass": "net.cloudml.core:InternalComponentInstance",
+            "name": "storm_nimbusInstance",
+            "requiredExecutionPlatformInstance": {
+                "eClass": "net.cloudml.core:RequiredExecutionPlatformInstance",
+                "name": "storm_nimbus_RequiredHostInstance",
+                "owner": "internalComponentInstances[storm_nimbusInstance]",
+                "type": "internalComponents[storm_nimbus]/requiredExecutionPlatform[storm_nimbus_RequiredHost]"
+            },
+            "type": "internalComponents[zookeeper]"
+        }
+    ],
+    "executesInstances": [
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "zookeeperHosting",
+            "providedExecutionPlatformInstance": "vmInstances[zookeeper_host_instance]/providedExecutionPlatformInstances[zookeeper_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[zookeeperInstance]/requiredExecutionPlatformInstance[zookeeper_RequiredHostInstance]"
+        },
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "stormHosting1",
+            "providedExecutionPlatformInstance": "vmInstances[storm_host_instance1]/providedExecutionPlatformInstances[storm_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[stormInstance]/requiredExecutionPlatformInstance[storm_RequiredHostInstance]"
+        },
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "stormHosting2",
+            "providedExecutionPlatformInstance": "vmInstances[storm_host_instance2]/providedExecutionPlatformInstances[storm_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[stormInstance]/requiredExecutionPlatformInstance[storm_RequiredHostInstance]"
+        },
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "stormHosting3",
+            "providedExecutionPlatformInstance": "vmInstances[storm_host_instance3]/providedExecutionPlatformInstances[storm_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[stormInstance]/requiredExecutionPlatformInstance[storm_RequiredHostInstance]"
+        },
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "storm_bimbusHosting1",
+            "providedExecutionPlatformInstance": "vmInstances[storm_nimbus_host_instance1]/providedExecutionPlatformInstances[storm_nimbus_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[storm_nimbusInstance]/requiredExecutionPlatformInstance[storm_nimbus_RequiredHostInstance]"
+        },
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "storm_nimbusHosting2",
+            "providedExecutionPlatformInstance": "vmInstances[storm_nimbus_host_instance2]/providedExecutionPlatformInstances[storm_nimbus_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[storm_nimbusInstance]/requiredExecutionPlatformInstance[storm_nimbus_RequiredHostInstance]"
+        },
+        {
+            "eClass": "net.cloudml.core:ExecuteInstance",
+            "name": "storm_nimbusHosting3",
+            "providedExecutionPlatformInstance": "vmInstances[storm_nimbus_host_instance3]/providedExecutionPlatformInstances[storm_nimbus_host_OpenStack_instance]",
+            "requiredExecutionPlatformInstance": "internalComponentInstances[storm_nimbusInstance]/requiredExecutionPlatformInstance[storm_nimbus_RequiredHostInstance]"
+        }
+    ]
+}

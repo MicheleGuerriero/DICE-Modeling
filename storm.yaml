@@ -1,0 +1,144 @@
+---
+  imports: 
+    - "http://www.getcloudify.org/spec/cloudify/3.2.1/types.yaml"
+    - "http://www.getcloudify.org/spec/openstack-plugin/1.2.1/plugin.yaml"
+    - "http://www.getcloudify.org/spec/chef-plugin/1.2/plugin.yaml"
+    - "types/dice.yaml"
+  tosca_definitions_version: "cloudify_dsl_1_1"
+  node_templates: 
+    zookeeper_floating_ip: 
+      type: "cloudify.openstack.nodes.FloatingIP"
+    storm_floating_ip: 
+      type: "cloudify.openstack.nodes.FloatingIP"
+    storm_nimbus: 
+      relationships: 
+        - 
+          type: "cloudify.relationships.contained_in"
+          target: "storm_nimbus_host"
+          source_interfaces: 
+            cloudify.interfaces.relationship_lifecycle: 
+              preconfigure: "scripts/connect_storm_to_nimbus.sh"
+        - 
+          type: "cloudify.relationships.connected_to"
+          target: "zookeeper"
+          source_interfaces: 
+            cloudify.interfaces.relationship_lifecycle: 
+              preconfigure: "scripts/connect_storm_to_zookeeper.sh"
+      interfaces: 
+        cloudify.interfaces.lifecycle: 
+          create: "scripts/configure_hosts.sh"
+      type: "dice.storm_nimbus"
+    zookeeper: 
+      relationships: 
+        - 
+          type: "cloudify.relationships.contained_in"
+          target: "zookeeper_host"
+          source_interfaces: 
+            cloudify.interfaces.relationship_lifecycle: 
+              preconfigure: "scripts/connect_zookeeper_servers.sh"
+      interfaces: 
+        cloudify.interfaces.lifecycle: 
+          create: "scripts/configure_hosts.sh"
+      type: "dice.zookeeper"
+    storm_nimbus_host: # do we need (and if yes how and where) to specify somehow the credentials or key for accessing this host?
+      relationships: 
+        - 
+          type: "cloudify.openstack.server_connected_to_floating_ip"
+          target: "storm_floating_ip"
+        - 
+          type: "cloudify.openstack.server_connected_to_security_group"
+          target: "storm_security_group"
+      type: "dice.medium_host" # does this contains also the information about the OS or the region?
+    storm_host: 
+      instances: 
+        deploy: 3
+      type: "dice.medium_host"
+    storm: 
+      relationships: 
+        - 
+          type: "cloudify.relationships.contained_in"
+          target: "storm_host" # what is target? A property defined in the type contained_in? I cannot see its definition in types.yaml
+        - 
+          type: "cloudify.relationships.connected_to"
+          target: "zookeeper" # what is target? A property defined in the type contained_in? I cannot see its definition in types.yaml
+          source_interfaces: 
+            cloudify.interfaces.relationship_lifecycle: 
+              preconfigure: "scripts/connect_storm_to_zookeeper.sh"
+        - 
+          type: "cloudify.relationships.connected_to"
+          target: "storm_nimbus" # what is target? A property defined in the type contained_in? I cannot see its definition in types.yaml
+          source_interfaces: 
+            cloudify.interfaces.relationship_lifecycle: 
+              preconfigure: "scripts/connect_storm_to_nimbus.sh"
+      interfaces: 
+        cloudify.interfaces.lifecycle: 
+          create: "scripts/configure_hosts.sh"
+      type: "dice.storm"
+    zookeeper_host: 
+      relationships: 
+        - 
+          type: "cloudify.openstack.server_connected_to_floating_ip"
+          target: "zookeeper_floating_ip"
+        - 
+          type: "cloudify.openstack.server_connected_to_security_group"
+          target: "zookeeper_security_group"
+      type: "dice.medium_host"
+    storm_security_group: 
+      type: "cloudify.openstack.nodes.SecurityGroup"
+      properties: 
+        security_group: # is it possible in tosca to have nested properties?
+          name: "ma_cloudify_storm" # does the definition of the security_group property allow to have a name property/attribute (it seems not from the plugin.yaml file?
+        rules: 
+          - remote_ip_prefix: "0.0.0.0/0" # as above, shouldn't properties be a list of assimegnet propertyName=propertyValue?
+          - port: 8080
+          - remote_ip_prefix: "0.0.0.0/0"
+          - port: 22
+    zookeeper_security_group: # same comments as above
+      type: "cloudify.openstack.nodes.SecurityGroup" # in the case of cloudml the security group is an attribute of a host and cannot be created but must be already existing on the provider (need to ask about this feature of cloudml).
+      properties: 
+        security_group: 
+          name: "ma_cloudify_zookeeper"
+        rules: 
+          - 
+            remote_ip_prefix: "0.0.0.0/0"
+            port: 2181
+          - 
+            remote_ip_prefix: "0.0.0.0/0"
+            port: 22
+  outputs: 
+    storm_nimbus_gui: 
+      description: "URL of the Storm nimbus gui"
+      value: 
+        concat: 
+          - "http://"
+          - 
+            get_attribute: 
+              - "storm_floating_ip"
+              - "floating_ip_address"
+          - ":8080"
+    zookeeper_endpoint: 
+      description: "Debugging endpoint to see if zookeeper lives"
+      value: 
+        concat: 
+          - 
+            get_attribute: 
+              - "zookeeper_floating_ip"
+              - "floating_ip_address"
+          - ": 2181"
+  inputs: 
+    chef_server: 
+      description: "Chef Server URL to use for provisioning\n"
+    agent_user: 
+      description: "User for connecting to agent VMs\n"
+    image: 
+      description: "Image to be used when launching agent VMs\n"
+    flavor_med: 
+      description: "Flavour of the VM to be used for medium-sized VMs (e.g. 2GB RAM)\n"
+    chef_validation_key: 
+      description: "Chef Server validation key to use for provisioning\n"
+    chef_validation_user: 
+      description: "Chef Server validation user to use for provisioning\n"
+    flavor_large: 
+      description: "Flavour of the VM to be used for large-sized VMs (e.g. 4GB RAM)\n"
+    chef_version: 
+      description: "Chef version to use for provisioning\n"
