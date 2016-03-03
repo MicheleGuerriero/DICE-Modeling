@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated tosca4cloudify -->
+      <package
+            uri="http://tosca4cloudify/1.0"
+            class="tosca4cloudify.Tosca4cloudifyPackage"
+            genModel="model/tosca4cloudify.genmodel"/>
+   </extension>
+
+</plugin>

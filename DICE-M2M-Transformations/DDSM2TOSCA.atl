@@ -1,0 +1,35 @@
+-- @nsURI TOSCA=http://tosca4cloudify/1.0
+-- @nsURI DDSM=http://ddsm/1.0
+
+module DDSM2TOSCA;
+create tosca : TOSCA from ddsm : DDSM;
+
+rule StormSupervisorRule{	
+	from 
+		s: DDSM!StormSupervisor
+	to 
+		t: TOSCA!Node_template(
+			node_template_name <- s.name,
+			type <- 'dice.storm'
+			)
+}
+
+rule StormNimbusRule{	
+	from 
+		s: DDSM!StormNimbus
+	to 
+		t: TOSCA!Node_template(
+			node_template_name <- s.name,
+			type <- 'dice.nimbus'
+			)
+}
+
+rule MediumHostRule{	
+	from 
+		s: DDSM!MediumHost
+	to 
+		t: TOSCA!Node_template(
+			node_template_name <- s.name,
+			type <- 'dice.mediumHost'
+			)
+}

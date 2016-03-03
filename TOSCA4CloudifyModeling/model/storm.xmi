@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tosca4cloudify:Service_Template
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tosca4cloudify="http://tosca4cloudify/1.0"
+    xsi:schemaLocation="http://tosca4cloudify/1.0 /TOSCA4CloudifyModeling/model/tosca4cloudify.ecore">
+  <serviceTemplate_hasImport
+      import_name=""
+      file="&quot;http://www.getcloudify.org/spec/cloudify/3.2.1/types.yaml&quot;"
+      namespace_uri=""/>
+  <serviceTemplate_hasImport
+      file="&quot;http://www.getcloudify.org/spec/openstack-plugin/1.2.1/plugin.yaml&quot;"/>
+  <serviceTemplate_hasImport
+      file="&quot;http://www.getcloudify.org/spec/chef-plugin/1.2/plugin.yaml&quot;"/>
+  <interface_hasInput
+      parameter_name="chef_server"
+      description="&quot;Chef Server URL to use for provisioning\n&quot;"/>
+  <service_hasNodeTemplate
+      node_template_name="zookeeper_floating_ip"
+      type="&quot;cloudify.openstack.nodes.FloatingIP&quot;"/>
+  <service_hasNodeTemplate
+      node_template_name="storm_floating_ip"
+      type="&quot;cloudify.openstack.nodes.FloatingIP&quot;"/>
+  <service_hasNodeTemplate
+      node_template_name="storm_nimbus"
+      type="&quot;dice.storm_nimbus&quot;">
+    <NodeTemplate_hasRelationship
+        type="&quot;cloudify.relationships.contained_in&quot;"
+        validSource=""
+        validTarget="&quot;storm_nimbus_host&quot;">
+      <relation_haSourceInterface
+          interface_name="cloudify.interfaces.relationship_lifecycle">
+        <hasOperation
+            operation_name="preconfigure"
+            description=""
+            script="&quot;scripts/connect_storm_to_zookeeper.sh&quot;"/>
+      </relation_haSourceInterface>
+    </NodeTemplate_hasRelationship>
+  </service_hasNodeTemplate>
+</tosca4cloudify:Service_Template>
