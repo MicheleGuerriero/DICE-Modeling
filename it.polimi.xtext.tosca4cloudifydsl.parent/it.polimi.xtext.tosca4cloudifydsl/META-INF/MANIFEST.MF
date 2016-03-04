@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: it.polimi.xtext.tosca4cloudifydsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: it.polimi.xtext.tosca4cloudifydsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: TOSCA4CloudifyModeling,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: it.polimi.xtext.tosca4cloudifydsl.validation,
+ it.polimi.xtext.tosca4cloudifydsl.services,
+ it.polimi.xtext.tosca4cloudifydsl.generator,
+ it.polimi.xtext.tosca4cloudifydsl.parser.antlr,
+ it.polimi.xtext.tosca4cloudifydsl.formatting,
+ it.polimi.xtext.tosca4cloudifydsl.serializer,
+ it.polimi.xtext.tosca4cloudifydsl,
+ it.polimi.xtext.tosca4cloudifydsl.parser.antlr.internal,
+ it.polimi.xtext.tosca4cloudifydsl.scoping
+Import-Package: org.apache.log4j
