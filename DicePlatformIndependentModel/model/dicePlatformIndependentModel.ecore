@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="dicePlatformIndependentModel" nsURI="http://www.example.org/dicePlatformIndependentModel"
-    nsPrefix="dicePlatformIndependentModel"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dicePlatformIndependentModel" nsURI="http://www.example.org/dicePlatformIndependentModel"
+    nsPrefix="dicePlatformIndependentModel">
+  <eClassifiers xsi:type="ecore:EClass" name="DPIM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diaelement" upperBound="-1"
+        eType="#//DIAElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DIAElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qosrequiredproperty" upperBound="-1"
+        eType="#//QoSRequiredProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QoSRequiredProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleElement" eSuperTypes="#//DIAElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeElement" eSuperTypes="#//DIAElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diaelement" upperBound="-1"
+        eType="#//DIAElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputeNode" eSuperTypes="#//SimpleElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscribeTo" eType="#//CommunicationChannel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publishTo" eType="#//CommunicationChannel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSource" eSuperTypes="#//SimpleElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataspecification" eType="#//DataSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceNode" eSuperTypes="#//DataSource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageNode" eSuperTypes="#//DataSource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationChannel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSpecification"/>
+</ecore:EPackage>

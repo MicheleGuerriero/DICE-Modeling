@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/DicePlatformIndependentModel/src" modelPluginID="DicePlatformIndependentModel"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/DicePlatformIndependentModel/src" modelPluginID="DicePlatformIndependentModel"
     modelName="DicePlatformIndependentModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>dicePlatformIndependentModel.ecore</foreignModel>
   <genPackages prefix="DicePlatformIndependentModel" disposableProviderFactory="true"
-      ecorePackage="dicePlatformIndependentModel.ecore#/"/>
+      ecorePackage="dicePlatformIndependentModel.ecore#/">
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DPIM">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//DPIM/diaelement"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DIAElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//DIAElement/qosrequiredproperty"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//QoSRequiredProperty"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//SimpleElement"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//CompositeElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//CompositeElement/diaelement"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//ComputeNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/communicationchannel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/communicationchannel.1"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DataSource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//DataSource/dataspecification"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//SourceNode"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//StorageNode"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//CommunicationChannel"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DataSpecification"/>
+  </genPackages>
 </genmodel:GenModel>
