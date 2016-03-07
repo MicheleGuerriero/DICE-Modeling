@@ -18,7 +18,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleElement" eSuperTypes="#//DIAElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeElement" eSuperTypes="#//DIAElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="diaelement" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isComposedOf" upperBound="-1"
         eType="#//DIAElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComputeNode" eSuperTypes="#//SimpleElement">

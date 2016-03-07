@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/DiceTechnolodySpecificModel/src" modelPluginID="DiceTechnolodySpecificModel"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/DiceTechnolodySpecificModel/src" modelPluginID="DiceTechnolodySpecificModel"
     modelName="DiceTechnolodySpecificModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>diceTechnolodySpecificModel.ecore</foreignModel>
   <genPackages prefix="DiceTechnolodySpecificModel" disposableProviderFactory="true"
-      ecorePackage="diceTechnolodySpecificModel.ecore#/"/>
+      ecorePackage="diceTechnolodySpecificModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diceTechnolodySpecificModel.ecore#//DataFormat"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diceTechnolodySpecificModel.ecore#//Operator"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diceTechnolodySpecificModel.ecore#//ProcessignType"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diceTechnolodySpecificModel.ecore#//SourceType"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diceTechnolodySpecificModel.ecore#//ChannelTechnology"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diceTechnolodySpecificModel.ecore#//ComputeTechnology"/>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//SourceNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//SourceNode/sourceType"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//SimpleElement"/>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//DataSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//DataSpecification/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//DataSpecification/dataModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//DataSpecification/dataFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//DPIM">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DPIM/diaelement"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//ComputeNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/subscribeTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/publishTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//ComputeNode/targetTech"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/readFromDataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//ComputeNode/procType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/wirtesOn"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//StorageNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//StorageNode/sourceType"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//QoSRequiredProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//QoSRequiredProperty/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//QoSRequiredProperty/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//QoSRequiredProperty/metric"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//CompositeElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//CompositeElement/diaelement"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//CommunicationChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//CommunicationChannel/targetTech"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//DIAElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DIAElement/qosrequiredproperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//DIAElement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//DataSource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DataSource/dataspecification"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>
