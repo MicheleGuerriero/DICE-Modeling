@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dTSMHadoopModel" nsURI="http://www.example.org/dTSMHadoopModel"
+    nsPrefix="dTSMHadoopModel">
+  <eClassifiers xsi:type="ecore:EClass" name="HadoopApplicationMain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hadoopjob" upperBound="-1"
+        eType="#//HadoopJob" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HadoopJob">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapper" upperBound="-1"
+        eType="#//Mapper" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reducer" upperBound="-1"
+        eType="#//Reducer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduler" upperBound="-1"
+        eType="#//Scheduler" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputformat" eType="#//InputFormat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputformat" eType="#//OutputFormat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mapper"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Reducer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Scheduler"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InputFormat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputsplit" eType="#//InputSplit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputSplit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordReader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputsplit" eType="#//InputSplit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyvaluepair" eType="#//KeyValuePair"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyValuePair"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordWriter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyvaluepair" eType="#//KeyValuePair"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputFormat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recordwriter" eType="#//RecordWriter"/>
+  </eClassifiers>
+</ecore:EPackage>
