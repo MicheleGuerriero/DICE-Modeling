@@ -7,27 +7,52 @@
   <foreignModel>dicePlatformIndependentModel.ecore</foreignModel>
   <genPackages prefix="DicePlatformIndependentModel" disposableProviderFactory="true"
       ecorePackage="dicePlatformIndependentModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dicePlatformIndependentModel.ecore#//Operator"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dicePlatformIndependentModel.ecore#//ComputeTechnology"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dicePlatformIndependentModel.ecore#//ChannelTechnology"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dicePlatformIndependentModel.ecore#//DataFormat"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dicePlatformIndependentModel.ecore#//SourceType"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dicePlatformIndependentModel.ecore#//ProcessignType"/>
     <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DPIM">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//DPIM/diaelement"/>
     </genClasses>
     <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DIAElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//DIAElement/qosrequiredproperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//DIAElement/id"/>
     </genClasses>
-    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//QoSRequiredProperty"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//QoSRequiredProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//QoSRequiredProperty/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//QoSRequiredProperty/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//QoSRequiredProperty/metric"/>
+    </genClasses>
     <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//SimpleElement"/>
     <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//CompositeElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//CompositeElement/diaelement"/>
     </genClasses>
     <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//ComputeNode">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/communicationchannel"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/communicationchannel.1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/subscribeTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/publishTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//ComputeNode/targetTech"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/readFromDataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//ComputeNode/procType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//ComputeNode/wirtesOn"/>
     </genClasses>
     <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DataSource">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dicePlatformIndependentModel.ecore#//DataSource/dataspecification"/>
     </genClasses>
-    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//SourceNode"/>
-    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//StorageNode"/>
-    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//CommunicationChannel"/>
-    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DataSpecification"/>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//SourceNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//SourceNode/sourceType"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//StorageNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//StorageNode/sourceType"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//CommunicationChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//CommunicationChannel/targetTech"/>
+    </genClasses>
+    <genClasses ecoreClass="dicePlatformIndependentModel.ecore#//DataSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//DataSpecification/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//DataSpecification/dataModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dicePlatformIndependentModel.ecore#//DataSpecification/dataFormat"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
