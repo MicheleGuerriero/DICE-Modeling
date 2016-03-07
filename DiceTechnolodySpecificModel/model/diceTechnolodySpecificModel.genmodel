@@ -32,14 +32,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/readFromDataSource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//ComputeNode/procType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/wirtesOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//ComputeNode/workflow"/>
     </genClasses>
     <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//StorageNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//StorageNode/sourceType"/>
     </genClasses>
-    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//QoSRequiredProperty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//QoSRequiredProperty/operator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//QoSRequiredProperty/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//QoSRequiredProperty/metric"/>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//Property/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//Property/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//Property/metric"/>
     </genClasses>
     <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//CompositeElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//CompositeElement/diaelement"/>
@@ -48,11 +49,41 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//CommunicationChannel/targetTech"/>
     </genClasses>
     <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//DIAElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DIAElement/qosrequiredproperty"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//DIAElement/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DIAElement/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DIAElement/property.1"/>
     </genClasses>
     <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//DataSource">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//DataSource/dataspecification"/>
     </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//SimpleProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//SimpleProperty/referToMetric"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute diceTechnolodySpecificModel.ecore#//Property/metric"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//CompositeProperty"/>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//Metric"/>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//Workflow"/>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//MapReduceWorkflow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//MapReduceWorkflow/mapreducephase"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//GraphBasedWorkflow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//GraphBasedWorkflow/node"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//MapReducePhase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//MapReducePhase/map"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//MapReducePhase/reduce"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//MapReducePhase/mapreducephase"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//Node">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//Node/node"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//Node/dataspecification"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//Map">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//Map/keyvaluepair"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//Reduce">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diceTechnolodySpecificModel.ecore#//Reduce/keyvaluepair"/>
+    </genClasses>
+    <genClasses ecoreClass="diceTechnolodySpecificModel.ecore#//KeyValuePair"/>
   </genPackages>
 </genmodel:GenModel>
