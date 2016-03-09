@@ -25,134 +25,134 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Import extends EObject {
-    /**
-     * Returns the value of the '<em><b>Import name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Import name</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Import name</em>' attribute.
-     * @see #setImport_name(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Import_name()
-     * @model
-     * @generated
-     */
-    String getImport_name();
+	/**
+	 * Returns the value of the '<em><b>Import name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Import name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Import name</em>' attribute.
+	 * @see #setImport_name(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Import_name()
+	 * @model
+	 * @generated
+	 */
+	String getImport_name();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Import#getImport_name <em>Import name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Import name</em>' attribute.
-     * @see #getImport_name()
-     * @generated
-     */
-    void setImport_name(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Import#getImport_name <em>Import name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Import name</em>' attribute.
+	 * @see #getImport_name()
+	 * @generated
+	 */
+	void setImport_name(String value);
 
-    /**
-     * Returns the value of the '<em><b>File</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>File</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>File</em>' attribute.
-     * @see #setFile(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_File()
-     * @model
-     * @generated
-     */
-    String getFile();
+	/**
+	 * Returns the value of the '<em><b>File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>File</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>File</em>' attribute.
+	 * @see #setFile(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_File()
+	 * @model
+	 * @generated
+	 */
+	String getFile();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Import#getFile <em>File</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>File</em>' attribute.
-     * @see #getFile()
-     * @generated
-     */
-    void setFile(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Import#getFile <em>File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>File</em>' attribute.
+	 * @see #getFile()
+	 * @generated
+	 */
+	void setFile(String value);
 
-    /**
-     * Returns the value of the '<em><b>Repository</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Repository</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Repository</em>' attribute.
-     * @see #setRepository(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Repository()
-     * @model
-     * @generated
-     */
-    String getRepository();
+	/**
+	 * Returns the value of the '<em><b>Repository</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Repository</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Repository</em>' attribute.
+	 * @see #setRepository(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Repository()
+	 * @model
+	 * @generated
+	 */
+	String getRepository();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Import#getRepository <em>Repository</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Repository</em>' attribute.
-     * @see #getRepository()
-     * @generated
-     */
-    void setRepository(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Import#getRepository <em>Repository</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Repository</em>' attribute.
+	 * @see #getRepository()
+	 * @generated
+	 */
+	void setRepository(String value);
 
-    /**
-     * Returns the value of the '<em><b>Namespace uri</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Namespace uri</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Namespace uri</em>' attribute.
-     * @see #setNamespace_uri(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Namespace_uri()
-     * @model
-     * @generated
-     */
-    String getNamespace_uri();
+	/**
+	 * Returns the value of the '<em><b>Namespace uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Namespace uri</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Namespace uri</em>' attribute.
+	 * @see #setNamespace_uri(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Namespace_uri()
+	 * @model
+	 * @generated
+	 */
+	String getNamespace_uri();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Import#getNamespace_uri <em>Namespace uri</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Namespace uri</em>' attribute.
-     * @see #getNamespace_uri()
-     * @generated
-     */
-    void setNamespace_uri(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Import#getNamespace_uri <em>Namespace uri</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Namespace uri</em>' attribute.
+	 * @see #getNamespace_uri()
+	 * @generated
+	 */
+	void setNamespace_uri(String value);
 
-    /**
-     * Returns the value of the '<em><b>Namespace prefix</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Namespace prefix</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Namespace prefix</em>' attribute.
-     * @see #setNamespace_prefix(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Namespace_prefix()
-     * @model
-     * @generated
-     */
-    String getNamespace_prefix();
+	/**
+	 * Returns the value of the '<em><b>Namespace prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Namespace prefix</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Namespace prefix</em>' attribute.
+	 * @see #setNamespace_prefix(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getImport_Namespace_prefix()
+	 * @model
+	 * @generated
+	 */
+	String getNamespace_prefix();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Import#getNamespace_prefix <em>Namespace prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Namespace prefix</em>' attribute.
-     * @see #getNamespace_prefix()
-     * @generated
-     */
-    void setNamespace_prefix(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Import#getNamespace_prefix <em>Namespace prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Namespace prefix</em>' attribute.
+	 * @see #getNamespace_prefix()
+	 * @generated
+	 */
+	void setNamespace_prefix(String value);
 
 } // Import

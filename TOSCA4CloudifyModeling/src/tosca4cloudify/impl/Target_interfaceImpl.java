@@ -15,23 +15,23 @@ import tosca4cloudify.Tosca4cloudifyPackage;
  * @generated
  */
 public class Target_interfaceImpl extends InterfaceImpl implements Target_interface {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected Target_interfaceImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Target_interfaceImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return Tosca4cloudifyPackage.Literals.TARGET_INTERFACE;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Tosca4cloudifyPackage.Literals.TARGET_INTERFACE;
+	}
 
 } //Target_interfaceImpl

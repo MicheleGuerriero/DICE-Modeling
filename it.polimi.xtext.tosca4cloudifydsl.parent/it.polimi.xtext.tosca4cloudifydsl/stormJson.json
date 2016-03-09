@@ -1,0 +1,192 @@
+{
+	"tosca_definitions_version" : "cloudify_dsl_1_1" 
+, "imports" : [ "http://www.getcloudify.org/spec/cloudify/3.2.1/types.yaml",
+	"http://www.getcloudify.org/spec/openstack-plugin/1.2.1/plugin.yaml",
+	"http://www.getcloudify.org/spec/chef-plugin/1.2/plugin.yaml",
+	"types/dice.yaml" ] 
+, "node_templates" : {
+		"storm" : {
+			"type" : "dice.storm" , 
+ "interfaces" : {
+				"cloudify.interfaces.lifecycle" : {
+					"create" : "scripts/configure_hosts.sh"
+				}
+			}
+			, 
+ "relationships" : [ {
+				"type" : "cloudify.relationships.contained_in" , 
+ "target" : "storm_host"
+			},
+			{
+				"type" : "cloudify.relationships.connected_to" , 
+ "target" : "zookeeper" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_storm_to_zookeeper.sh"
+					}
+				}
+			},
+			{
+				"type" : "cloudify.relationships.connected_to" , 
+ "target" : "storm_nimbus" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_storm_to_nimbus.sh"
+					}
+				}
+			}
+			]
+		},
+		"zookeeper_floating_ip" : {
+			"type" : "cloudify.openstack.nodes.FloatingIP"
+		},
+		"storm_floating_ip" : {
+			"type" : "cloudify.openstack.nodes.FloatingIP"
+		},
+		"storm_nimbus" : {
+			"type" : "dice.storm_nimbus" , 
+ "interfaces" : {
+				"cloudify.interfaces.lifecycle" : {
+					"create" : "scripts/configure_hosts.sh"
+				}
+			}
+			, 
+ "relationships" : [ {
+				"type" : "cloudify.relationships.contained_in" , 
+ "target" : "storm_nimbus_host" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_storm_to_nimbus.sh"
+					}
+				}
+			},
+			{
+				"type" : "cloudify.relationships.connected_to" , 
+ "target" : "zookeeper" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_storm_to_zookeeper.sh"
+					}
+				}
+			}
+			]
+		},
+		"zookeeper" : {
+			"type" : "dice.zookeeper" , 
+ "interfaces" : {
+				"cloudify.interfaces.lifecycle" : {
+					"create" : "scripts/configure_hosts.sh"
+				}
+			}
+			, 
+ "relationships" : [ {
+				"type" : "cloudify.relationships.contained_in" , 
+ "target" : "zookeeper_host" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_zookeeper_servers.sh"
+					}
+				}
+			}
+			]
+		},
+		"storm_nimbus_host" : {
+			"type" : "dice.medium_host" , 
+ "relationships" : [ {
+				"type" : "cloudify.openstack.server_connected_to_floating_ip" , 
+ "target" : "storm_floating_ip"
+			},
+			{
+				"type" : "cloudify.openstack.server_connected_to_security_group" , 
+ "target" : "storm_security_group"
+			}
+			]
+		},
+		"storm_host" : {
+			"type" : "dice.medium_host" , 
+ "instances" : {
+				"deploy" : 3
+			}
+		},
+		"storm" : {
+			"type" : "dice.storm" , 
+ "interfaces" : {
+				"cloudify.interfaces.lifecycle" : {
+					"create" : "scripts/configure_hosts.sh"
+				}
+			}
+			, 
+ "relationships" : [ {
+				"type" : "cloudify.relationships.contained_in" , 
+ "target" : "storm_host"
+			},
+			{
+				"type" : "cloudify.relationships.connected_to" , 
+ "target" : "zookeeper" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_storm_to_zookeeper.sh"
+					}
+				}
+			},
+			{
+				"type" : "cloudify.relationships.connected_to" , 
+ "target" : "storm_nimbus" , 
+ "source_interfaces" : {
+					"cloudify.interfaces.relationship_lifecycle"  : {
+						"preconfigure" : "scripts/connect_storm_to_nimbus.sh"
+					}
+				}
+			}
+			]
+		},
+		"zookeeper_host" : {
+			"type" : "dice.medium_host" , 
+ "relationships" : [ {
+				"type" : "cloudify.openstack.server_connected_to_floating_ip" , 
+ "target" : "zookeeper_floating_ip"
+			},
+			{
+				"type" : "cloudify.openstack.server_connected_to_security_group" , 
+ "target" : "zookeeper_security_group"
+			}
+			]
+		},
+		"storm_security_group" : {
+			"type" : "cloudify.openstack.nodes.SecurityGroup" , 
+ "properties" : {
+				"security_group" : [ {
+					"name" : "ma_cloudify_storm"
+				}
+				],
+				"rules" : [ {
+					"port" : "8080",
+					"remote_ip_prefix" : "0.0.0.0/0"
+				},
+				{
+					"remote_ip_prefix" : "0.0.0.0/0",
+					"port" : "22"
+				}
+				]
+			}
+		},
+		"zookeeper_security_group" : {
+			"type" : "cloudify.openstack.nodes.SecurityGroup" , 
+ "properties" : {
+				"security_group" : [ {
+					"name" : "ma_cloudify_zookeeper"
+				}
+				],
+				"rules" : [ {
+					"port" : "2181",
+					"remote_ip_prefix" : "0.0.0.0/0"
+				},
+				{
+					"port" : "22",
+					"remote_ip_prefix" : "0.0.0.0/0"
+				}
+				]
+			}
+		}
+	}
+}

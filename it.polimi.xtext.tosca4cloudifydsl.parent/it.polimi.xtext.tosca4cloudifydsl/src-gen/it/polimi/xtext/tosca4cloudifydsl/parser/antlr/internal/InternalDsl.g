@@ -81,15 +81,15 @@ ruleService_Template returns [EObject current=null]
 			newLeafNode(otherlv_0, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_0());
 		}
 		(
-			otherlv_1='"tosca_definition_version" :'
+			otherlv_1='"tosca_definitions_version" :'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getService_TemplateAccess().getTosca_definition_versionKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getService_TemplateAccess().getTosca_definitions_versionKeyword_1_0());
 			}
 			(
 				(
-					lv_tosca_definition_version_2_0=RULE_STRING
+					lv_tosca_definitions_version_2_0=RULE_STRING
 					{
-						newLeafNode(lv_tosca_definition_version_2_0, grammarAccess.getService_TemplateAccess().getTosca_definition_versionSTRINGTerminalRuleCall_1_1_0());
+						newLeafNode(lv_tosca_definitions_version_2_0, grammarAccess.getService_TemplateAccess().getTosca_definitions_versionSTRINGTerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
@@ -97,52 +97,28 @@ ruleService_Template returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"tosca_definition_version",
-							lv_tosca_definition_version_2_0,
+							"tosca_definitions_version",
+							lv_tosca_definitions_version_2_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_3='\n, "description" :'
+			otherlv_3='\n, "imports" :'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getService_TemplateAccess().getDescriptionKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getService_TemplateAccess().getImportsKeyword_2_0());
 			}
-			(
-				(
-					lv_description_4_0=RULE_STRING
-					{
-						newLeafNode(lv_description_4_0, grammarAccess.getService_TemplateAccess().getDescriptionSTRINGTerminalRuleCall_2_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getService_TemplateRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"description",
-							lv_description_4_0,
-							"org.eclipse.xtext.common.Terminals.STRING");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_5='\n, "imports" :'
+			otherlv_4='['
 			{
-				newLeafNode(otherlv_5, grammarAccess.getService_TemplateAccess().getImportsKeyword_3_0());
-			}
-			otherlv_6='['
-			{
-				newLeafNode(otherlv_6, grammarAccess.getService_TemplateAccess().getLeftSquareBracketKeyword_3_1());
+				newLeafNode(otherlv_4, grammarAccess.getService_TemplateAccess().getLeftSquareBracketKeyword_2_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasImportImportParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasImportImportParserRuleCall_2_2_0());
 					}
-					lv_serviceTemplate_hasImport_7_0=ruleImport
+					lv_serviceTemplate_hasImport_5_0=ruleImport
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -150,23 +126,23 @@ ruleService_Template returns [EObject current=null]
 						add(
 							$current,
 							"serviceTemplate_hasImport",
-							lv_serviceTemplate_hasImport_7_0,
+							lv_serviceTemplate_hasImport_5_0,
 							"it.polimi.xtext.tosca4cloudifydsl.Dsl.Import");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_8=','
+				otherlv_6=','
 				{
-					newLeafNode(otherlv_8, grammarAccess.getService_TemplateAccess().getCommaKeyword_3_3_0());
+					newLeafNode(otherlv_6, grammarAccess.getService_TemplateAccess().getCommaKeyword_2_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasImportImportParserRuleCall_3_3_1_0());
+							newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasImportImportParserRuleCall_2_3_1_0());
 						}
-						lv_serviceTemplate_hasImport_9_0=ruleImport
+						lv_serviceTemplate_hasImport_7_0=ruleImport
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -174,33 +150,33 @@ ruleService_Template returns [EObject current=null]
 							add(
 								$current,
 								"serviceTemplate_hasImport",
-								lv_serviceTemplate_hasImport_9_0,
+								lv_serviceTemplate_hasImport_7_0,
 								"it.polimi.xtext.tosca4cloudifydsl.Dsl.Import");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_10=']'
+			otherlv_8=']'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getService_TemplateAccess().getRightSquareBracketKeyword_3_4());
+				newLeafNode(otherlv_8, grammarAccess.getService_TemplateAccess().getRightSquareBracketKeyword_2_4());
 			}
 		)?
 		(
-			otherlv_11='\n, "inputs" :'
+			otherlv_9='\n, "inputs" :'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getService_TemplateAccess().getInputsKeyword_4_0());
+				newLeafNode(otherlv_9, grammarAccess.getService_TemplateAccess().getInputsKeyword_3_0());
 			}
-			otherlv_12='{'
+			otherlv_10='{'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_10, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_3_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getService_TemplateAccess().getInterface_hasInputInputParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getService_TemplateAccess().getInterface_hasInputInputParserRuleCall_3_2_0());
 					}
-					lv_interface_hasInput_13_0=ruleInput
+					lv_interface_hasInput_11_0=ruleInput
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -208,23 +184,23 @@ ruleService_Template returns [EObject current=null]
 						add(
 							$current,
 							"interface_hasInput",
-							lv_interface_hasInput_13_0,
+							lv_interface_hasInput_11_0,
 							"it.polimi.xtext.tosca4cloudifydsl.Dsl.Input");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_14=','
+				otherlv_12=','
 				{
-					newLeafNode(otherlv_14, grammarAccess.getService_TemplateAccess().getCommaKeyword_4_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getService_TemplateAccess().getCommaKeyword_3_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getService_TemplateAccess().getInterface_hasInputInputParserRuleCall_4_3_1_0());
+							newCompositeNode(grammarAccess.getService_TemplateAccess().getInterface_hasInputInputParserRuleCall_3_3_1_0());
 						}
-						lv_interface_hasInput_15_0=ruleInput
+						lv_interface_hasInput_13_0=ruleInput
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -232,32 +208,32 @@ ruleService_Template returns [EObject current=null]
 							add(
 								$current,
 								"interface_hasInput",
-								lv_interface_hasInput_15_0,
+								lv_interface_hasInput_13_0,
 								"it.polimi.xtext.tosca4cloudifydsl.Dsl.Input");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_16='}'
+			otherlv_14='}'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_4_4());
+				newLeafNode(otherlv_14, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_3_4());
 			}
 		)?
-		otherlv_17='\n, "node_templates" :'
+		otherlv_15='\n, "node_templates" :'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getService_TemplateAccess().getNode_templatesKeyword_5());
+			newLeafNode(otherlv_15, grammarAccess.getService_TemplateAccess().getNode_templatesKeyword_4());
 		}
-		otherlv_18='{'
+		otherlv_16='{'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_6());
+			newLeafNode(otherlv_16, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getService_TemplateAccess().getService_hasNodeTemplateNode_templateParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getService_TemplateAccess().getService_hasNodeTemplateNode_templateParserRuleCall_6_0());
 				}
-				lv_service_hasNodeTemplate_19_0=ruleNode_template
+				lv_service_hasNodeTemplate_17_0=ruleNode_template
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -265,23 +241,23 @@ ruleService_Template returns [EObject current=null]
 					add(
 						$current,
 						"service_hasNodeTemplate",
-						lv_service_hasNodeTemplate_19_0,
+						lv_service_hasNodeTemplate_17_0,
 						"it.polimi.xtext.tosca4cloudifydsl.Dsl.Node_template");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_20=','
+			otherlv_18=','
 			{
-				newLeafNode(otherlv_20, grammarAccess.getService_TemplateAccess().getCommaKeyword_8_0());
+				newLeafNode(otherlv_18, grammarAccess.getService_TemplateAccess().getCommaKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getService_TemplateAccess().getService_hasNodeTemplateNode_templateParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getService_TemplateAccess().getService_hasNodeTemplateNode_templateParserRuleCall_7_1_0());
 					}
-					lv_service_hasNodeTemplate_21_0=ruleNode_template
+					lv_service_hasNodeTemplate_19_0=ruleNode_template
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -289,32 +265,32 @@ ruleService_Template returns [EObject current=null]
 						add(
 							$current,
 							"service_hasNodeTemplate",
-							lv_service_hasNodeTemplate_21_0,
+							lv_service_hasNodeTemplate_19_0,
 							"it.polimi.xtext.tosca4cloudifydsl.Dsl.Node_template");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_22='}'
+		otherlv_20='}'
 		{
-			newLeafNode(otherlv_22, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_20, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_8());
 		}
 		(
-			otherlv_23='\n, "outputs" :'
+			otherlv_21='\n, "outputs" :'
 			{
-				newLeafNode(otherlv_23, grammarAccess.getService_TemplateAccess().getOutputsKeyword_10_0());
+				newLeafNode(otherlv_21, grammarAccess.getService_TemplateAccess().getOutputsKeyword_9_0());
 			}
-			otherlv_24='{'
+			otherlv_22='{'
 			{
-				newLeafNode(otherlv_24, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_10_1());
+				newLeafNode(otherlv_22, grammarAccess.getService_TemplateAccess().getLeftCurlyBracketKeyword_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasOutputOutputParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasOutputOutputParserRuleCall_9_2_0());
 					}
-					lv_serviceTemplate_hasOutput_25_0=ruleOutput
+					lv_serviceTemplate_hasOutput_23_0=ruleOutput
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -322,23 +298,23 @@ ruleService_Template returns [EObject current=null]
 						add(
 							$current,
 							"serviceTemplate_hasOutput",
-							lv_serviceTemplate_hasOutput_25_0,
+							lv_serviceTemplate_hasOutput_23_0,
 							"it.polimi.xtext.tosca4cloudifydsl.Dsl.Output");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_26=','
+				otherlv_24=','
 				{
-					newLeafNode(otherlv_26, grammarAccess.getService_TemplateAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getService_TemplateAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasOutputOutputParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getService_TemplateAccess().getServiceTemplate_hasOutputOutputParserRuleCall_9_3_1_0());
 						}
-						lv_serviceTemplate_hasOutput_27_0=ruleOutput
+						lv_serviceTemplate_hasOutput_25_0=ruleOutput
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getService_TemplateRule());
@@ -346,21 +322,21 @@ ruleService_Template returns [EObject current=null]
 							add(
 								$current,
 								"serviceTemplate_hasOutput",
-								lv_serviceTemplate_hasOutput_27_0,
+								lv_serviceTemplate_hasOutput_25_0,
 								"it.polimi.xtext.tosca4cloudifydsl.Dsl.Output");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_28='}'
+			otherlv_26='}'
 			{
-				newLeafNode(otherlv_28, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_10_4());
+				newLeafNode(otherlv_26, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_9_4());
 			}
 		)?
-		otherlv_29='}'
+		otherlv_27='}'
 		{
-			newLeafNode(otherlv_29, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_27, grammarAccess.getService_TemplateAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -455,40 +431,6 @@ ruleRelationship returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEStringRule()); }
-	iv_ruleEString=ruleEString
-	{ $current=$iv_ruleEString.current.getText(); }
-	EOF;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_STRING_0=RULE_STRING
-		{
-			$current.merge(this_STRING_0);
-		}
-		{
-			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-		}
-		    |
-		this_ID_1=RULE_ID
-		{
-			$current.merge(this_ID_1);
-		}
-		{
-			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-		}
-	)
-;
-
 // Entry rule entryRuleImport
 entryRuleImport returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getImportRule()); }
@@ -556,186 +498,83 @@ ruleOutput returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Output'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getOutputAccess().getOutputKeyword_1());
-		}
 		(
 			(
+				lv_parameter_name_1_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getOutputAccess().getParameter_nameEStringParserRuleCall_2_0());
+					newLeafNode(lv_parameter_name_1_0, grammarAccess.getOutputAccess().getParameter_nameSTRINGTerminalRuleCall_1_0());
 				}
-				lv_parameter_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getOutputRule());
+						$current = createModelElement(grammarAccess.getOutputRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"parameter_name",
-						lv_parameter_name_2_0,
-						"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-					afterParserOrEnumRuleCall();
+						lv_parameter_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getOutputAccess().getColonKeyword_2());
+		}
 		otherlv_3='{'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getOutputAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
-			otherlv_4='type'
+			otherlv_4='"description" :'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getOutputAccess().getTypeKeyword_4_0());
+				newLeafNode(otherlv_4, grammarAccess.getOutputAccess().getDescriptionKeyword_4_0());
 			}
 			(
 				(
+					lv_description_5_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getOutputAccess().getTypeEStringParserRuleCall_4_1_0());
+						newLeafNode(lv_description_5_0, grammarAccess.getOutputAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0());
 					}
-					lv_type_5_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOutputRule());
+							$current = createModelElement(grammarAccess.getOutputRule());
 						}
-						set(
-							$current,
-							"type",
-							lv_type_5_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='description'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getOutputAccess().getDescriptionKeyword_5_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getOutputAccess().getDescriptionEStringParserRuleCall_5_1_0());
-					}
-					lv_description_7_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOutputRule());
-						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"description",
-							lv_description_7_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							lv_description_5_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_8='value'
+			otherlv_6='value:'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getOutputAccess().getValueKeyword_6_0());
+				newLeafNode(otherlv_6, grammarAccess.getOutputAccess().getValueKeyword_5_0());
 			}
 			(
 				(
+					lv_value_7_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getOutputAccess().getValueEStringParserRuleCall_6_1_0());
+						newLeafNode(lv_value_7_0, grammarAccess.getOutputAccess().getValueSTRINGTerminalRuleCall_5_1_0());
 					}
-					lv_value_9_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOutputRule());
+							$current = createModelElement(grammarAccess.getOutputRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_9_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							lv_value_7_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
-		(
-			otherlv_10='required'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getOutputAccess().getRequiredKeyword_7_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getOutputAccess().getRequiredEStringParserRuleCall_7_1_0());
-					}
-					lv_required_11_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOutputRule());
-						}
-						set(
-							$current,
-							"required",
-							lv_required_11_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_12='default'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getOutputAccess().getDefaultKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getOutputAccess().getDefaultEStringParserRuleCall_8_1_0());
-					}
-					lv_default_13_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOutputRule());
-						}
-						set(
-							$current,
-							"default",
-							lv_default_13_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='status'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getOutputAccess().getStatusKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getOutputAccess().getStatusEStringParserRuleCall_9_1_0());
-					}
-					lv_status_15_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOutputRule());
-						}
-						set(
-							$current,
-							"status",
-							lv_status_15_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_16='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getOutputAccess().getRightCurlyBracketKeyword_10());
+			newLeafNode(otherlv_8, grammarAccess.getOutputAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -765,20 +604,19 @@ ruleInput returns [EObject current=null]
 		)
 		(
 			(
+				lv_parameter_name_1_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getInputAccess().getParameter_nameEStringParserRuleCall_1_0());
+					newLeafNode(lv_parameter_name_1_0, grammarAccess.getInputAccess().getParameter_nameSTRINGTerminalRuleCall_1_0());
 				}
-				lv_parameter_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInputRule());
+						$current = createModelElement(grammarAccess.getInputRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"parameter_name",
 						lv_parameter_name_1_0,
-						"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -1257,12 +1095,16 @@ ruleNode_template returns [EObject current=null]
 			{
 				newLeafNode(otherlv_38, grammarAccess.getNode_templateAccess().getInstancesKeyword_11_0());
 			}
+			otherlv_39='{'
+			{
+				newLeafNode(otherlv_39, grammarAccess.getNode_templateAccess().getLeftCurlyBracketKeyword_11_1());
+			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNode_templateAccess().getNodeTemplate_hasInstancesInstanceParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getNode_templateAccess().getNodeTemplate_hasInstancesInstanceParserRuleCall_11_2_0());
 					}
-					lv_nodeTemplate_hasInstances_39_0=ruleinstance
+					lv_nodeTemplate_hasInstances_40_0=ruleinstance
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNode_templateRule());
@@ -1270,16 +1112,20 @@ ruleNode_template returns [EObject current=null]
 						set(
 							$current,
 							"nodeTemplate_hasInstances",
-							lv_nodeTemplate_hasInstances_39_0,
+							lv_nodeTemplate_hasInstances_40_0,
 							"it.polimi.xtext.tosca4cloudifydsl.Dsl.instance");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
+			otherlv_41='}'
+			{
+				newLeafNode(otherlv_41, grammarAccess.getNode_templateAccess().getRightCurlyBracketKeyword_11_3());
+			}
 		)?
-		otherlv_40='}'
+		otherlv_42='}'
 		{
-			newLeafNode(otherlv_40, grammarAccess.getNode_templateAccess().getRightCurlyBracketKeyword_12());
+			newLeafNode(otherlv_42, grammarAccess.getNode_templateAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -1409,211 +1255,281 @@ ruleProperty returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Property'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getPropertyAccess().getPropertyKeyword_1());
-		}
 		(
 			(
+				lv_property_name_1_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getPropertyAccess().getParameter_nameEStringParserRuleCall_2_0());
+					newLeafNode(lv_property_name_1_0, grammarAccess.getPropertyAccess().getProperty_nameSTRINGTerminalRuleCall_1_0());
 				}
-				lv_parameter_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPropertyRule());
+						$current = createModelElement(grammarAccess.getPropertyRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"parameter_name",
-						lv_parameter_name_2_0,
-						"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-					afterParserOrEnumRuleCall();
+						"property_name",
+						lv_property_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3='{'
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getPropertyAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getPropertyAccess().getColonKeyword_2());
+		}
+		otherlv_3='['
+		{
+			newLeafNode(otherlv_3, grammarAccess.getPropertyAccess().getLeftSquareBracketKeyword_3());
 		}
 		(
-			otherlv_4='type'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getPropertyAccess().getTypeKeyword_4_0());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getTypeEStringParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getPropertyAccess().getProperty_hasParametersParametersParserRuleCall_4_0_0());
 					}
-					lv_type_5_0=ruleEString
+					lv_property_hasParameters_4_0=ruleParameters
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPropertyRule());
 						}
-						set(
+						add(
 							$current,
-							"type",
-							lv_type_5_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
+							"property_hasParameters",
+							lv_property_hasParameters_4_0,
+							"it.polimi.xtext.tosca4cloudifydsl.Dsl.Parameters");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)?
-		(
-			otherlv_6='description'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getPropertyAccess().getDescriptionKeyword_5_0());
-			}
 			(
+				otherlv_5=','
+				{
+					newLeafNode(otherlv_5, grammarAccess.getPropertyAccess().getCommaKeyword_4_1_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getDescriptionEStringParserRuleCall_5_1_0());
-					}
-					lv_description_7_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPropertyRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getPropertyAccess().getProperty_hasParametersParametersParserRuleCall_4_1_1_0());
 						}
-						set(
-							$current,
-							"description",
-							lv_description_7_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='value'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getPropertyAccess().getValueKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getValueEStringParserRuleCall_6_1_0());
-					}
-					lv_value_9_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPropertyRule());
+						lv_property_hasParameters_6_0=ruleParameters
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getPropertyRule());
+							}
+							add(
+								$current,
+								"property_hasParameters",
+								lv_property_hasParameters_6_0,
+								"it.polimi.xtext.tosca4cloudifydsl.Dsl.Parameters");
+							afterParserOrEnumRuleCall();
 						}
-						set(
-							$current,
-							"value",
-							lv_value_9_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
+					)
 				)
-			)
+			)*
 		)?
-		(
-			otherlv_10='required'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getPropertyAccess().getRequiredKeyword_7_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getRequiredEStringParserRuleCall_7_1_0());
-					}
-					lv_required_11_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPropertyRule());
-						}
-						set(
-							$current,
-							"required",
-							lv_required_11_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_12='default'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getPropertyAccess().getDefaultKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getDefaultEStringParserRuleCall_8_1_0());
-					}
-					lv_default_13_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPropertyRule());
-						}
-						set(
-							$current,
-							"default",
-							lv_default_13_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='status'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getPropertyAccess().getStatusKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getStatusEStringParserRuleCall_9_1_0());
-					}
-					lv_status_15_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPropertyRule());
-						}
-						set(
-							$current,
-							"status",
-							lv_status_15_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_16='property_name'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getPropertyAccess().getProperty_nameKeyword_10_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPropertyAccess().getProperty_nameEStringParserRuleCall_10_1_0());
-					}
-					lv_property_name_17_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPropertyRule());
-						}
-						set(
-							$current,
-							"property_name",
-							lv_property_name_17_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_18='}'
+		otherlv_7=']'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getPropertyAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_7, grammarAccess.getPropertyAccess().getRightSquareBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleParameters
+entryRuleParameters returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParametersRule()); }
+	iv_ruleParameters=ruleParameters
+	{ $current=$iv_ruleParameters.current; }
+	EOF;
+
+// Rule Parameters
+ruleParameters returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getParametersAccess().getParametersAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getParametersAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getParametersAccess().getParemeters_hasParameterParameterParserRuleCall_2_0_0());
+					}
+					lv_Paremeters_hasParameter_2_0=ruleParameter
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParametersRule());
+						}
+						add(
+							$current,
+							"Paremeters_hasParameter",
+							lv_Paremeters_hasParameter_2_0,
+							"it.polimi.xtext.tosca4cloudifydsl.Dsl.Parameter");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_3=','
+				{
+					newLeafNode(otherlv_3, grammarAccess.getParametersAccess().getCommaKeyword_2_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getParametersAccess().getParemeters_hasParameterParameterParserRuleCall_2_1_1_0());
+						}
+						lv_Paremeters_hasParameter_4_0=ruleParameter
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getParametersRule());
+							}
+							add(
+								$current,
+								"Paremeters_hasParameter",
+								lv_Paremeters_hasParameter_4_0,
+								"it.polimi.xtext.tosca4cloudifydsl.Dsl.Parameter");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)?
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getParametersAccess().getRightCurlyBracketKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleParameter_Impl
+entryRuleParameter_Impl returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParameter_ImplRule()); }
+	iv_ruleParameter_Impl=ruleParameter_Impl
+	{ $current=$iv_ruleParameter_Impl.current; }
+	EOF;
+
+// Rule Parameter_Impl
+ruleParameter_Impl returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getParameter_ImplAccess().getParameterAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_parameter_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_parameter_name_1_0, grammarAccess.getParameter_ImplAccess().getParameter_nameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getParameter_ImplRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"parameter_name",
+						lv_parameter_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getParameter_ImplAccess().getColonKeyword_2());
+		}
+		(
+			(
+				lv_value_3_0=RULE_STRING
+				{
+					newLeafNode(lv_value_3_0, grammarAccess.getParameter_ImplAccess().getValueSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getParameter_ImplRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleParameter
+entryRuleParameter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParameterRule()); }
+	iv_ruleParameter=ruleParameter
+	{ $current=$iv_ruleParameter.current; }
+	EOF;
+
+// Rule Parameter
+ruleParameter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getParameterAccess().getParameter_ImplParserRuleCall_0());
+		}
+		this_Parameter_Impl_0=ruleParameter_Impl
+		{
+			$current = $this_Parameter_Impl_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getParameterAccess().getAttributeParserRuleCall_1());
+		}
+		this_Attribute_1=ruleAttribute
+		{
+			$current = $this_Attribute_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getParameterAccess().getInputParserRuleCall_2());
+		}
+		this_Input_2=ruleInput
+		{
+			$current = $this_Input_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getParameterAccess().getOutputParserRuleCall_3());
+		}
+		this_Output_3=ruleOutput
+		{
+			$current = $this_Output_3.current;
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -1647,20 +1563,19 @@ ruleAttribute returns [EObject current=null]
 		}
 		(
 			(
+				lv_parameter_name_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getAttributeAccess().getParameter_nameEStringParserRuleCall_2_0());
+					newLeafNode(lv_parameter_name_2_0, grammarAccess.getAttributeAccess().getParameter_nameSTRINGTerminalRuleCall_2_0());
 				}
-				lv_parameter_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAttributeRule());
+						$current = createModelElement(grammarAccess.getAttributeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"parameter_name",
 						lv_parameter_name_2_0,
-						"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -1675,20 +1590,19 @@ ruleAttribute returns [EObject current=null]
 			}
 			(
 				(
+					lv_type_5_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getTypeEStringParserRuleCall_4_1_0());
+						newLeafNode(lv_type_5_0, grammarAccess.getAttributeAccess().getTypeSTRINGTerminalRuleCall_4_1_0());
 					}
-					lv_type_5_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+							$current = createModelElement(grammarAccess.getAttributeRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"type",
 							lv_type_5_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1700,20 +1614,19 @@ ruleAttribute returns [EObject current=null]
 			}
 			(
 				(
+					lv_description_7_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getDescriptionEStringParserRuleCall_5_1_0());
+						newLeafNode(lv_description_7_0, grammarAccess.getAttributeAccess().getDescriptionSTRINGTerminalRuleCall_5_1_0());
 					}
-					lv_description_7_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+							$current = createModelElement(grammarAccess.getAttributeRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"description",
 							lv_description_7_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1725,20 +1638,19 @@ ruleAttribute returns [EObject current=null]
 			}
 			(
 				(
+					lv_value_9_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getValueEStringParserRuleCall_6_1_0());
+						newLeafNode(lv_value_9_0, grammarAccess.getAttributeAccess().getValueSTRINGTerminalRuleCall_6_1_0());
 					}
-					lv_value_9_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+							$current = createModelElement(grammarAccess.getAttributeRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"value",
 							lv_value_9_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1750,20 +1662,19 @@ ruleAttribute returns [EObject current=null]
 			}
 			(
 				(
+					lv_required_11_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getRequiredEStringParserRuleCall_7_1_0());
+						newLeafNode(lv_required_11_0, grammarAccess.getAttributeAccess().getRequiredSTRINGTerminalRuleCall_7_1_0());
 					}
-					lv_required_11_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+							$current = createModelElement(grammarAccess.getAttributeRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"required",
 							lv_required_11_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1775,20 +1686,19 @@ ruleAttribute returns [EObject current=null]
 			}
 			(
 				(
+					lv_default_13_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getDefaultEStringParserRuleCall_8_1_0());
+						newLeafNode(lv_default_13_0, grammarAccess.getAttributeAccess().getDefaultSTRINGTerminalRuleCall_8_1_0());
 					}
-					lv_default_13_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+							$current = createModelElement(grammarAccess.getAttributeRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"default",
 							lv_default_13_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1800,20 +1710,19 @@ ruleAttribute returns [EObject current=null]
 			}
 			(
 				(
+					lv_status_15_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getStatusEStringParserRuleCall_9_1_0());
+						newLeafNode(lv_status_15_0, grammarAccess.getAttributeAccess().getStatusSTRINGTerminalRuleCall_9_1_0());
 					}
-					lv_status_15_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+							$current = createModelElement(grammarAccess.getAttributeRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"status",
 							lv_status_15_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1863,20 +1772,19 @@ ruleRequirement returns [EObject current=null]
 			}
 			(
 				(
+					lv_requirement_name_4_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getRequirementAccess().getRequirement_nameEStringParserRuleCall_3_1_0());
+						newLeafNode(lv_requirement_name_4_0, grammarAccess.getRequirementAccess().getRequirement_nameSTRINGTerminalRuleCall_3_1_0());
 					}
-					lv_requirement_name_4_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRequirementRule());
+							$current = createModelElement(grammarAccess.getRequirementRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"requirement_name",
 							lv_requirement_name_4_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1888,20 +1796,19 @@ ruleRequirement returns [EObject current=null]
 			}
 			(
 				(
+					lv_node_6_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getRequirementAccess().getNodeEStringParserRuleCall_4_1_0());
+						newLeafNode(lv_node_6_0, grammarAccess.getRequirementAccess().getNodeSTRINGTerminalRuleCall_4_1_0());
 					}
-					lv_node_6_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRequirementRule());
+							$current = createModelElement(grammarAccess.getRequirementRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"node",
 							lv_node_6_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1913,20 +1820,19 @@ ruleRequirement returns [EObject current=null]
 			}
 			(
 				(
+					lv_capability_Type_name_8_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getRequirementAccess().getCapability_Type_nameEStringParserRuleCall_5_1_0());
+						newLeafNode(lv_capability_Type_name_8_0, grammarAccess.getRequirementAccess().getCapability_Type_nameSTRINGTerminalRuleCall_5_1_0());
 					}
-					lv_capability_Type_name_8_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRequirementRule());
+							$current = createModelElement(grammarAccess.getRequirementRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"capability_Type_name",
 							lv_capability_Type_name_8_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1942,20 +1848,19 @@ ruleRequirement returns [EObject current=null]
 			}
 			(
 				(
+					lv_occurances_11_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getRequirementAccess().getOccurancesEStringParserRuleCall_6_2_0());
+						newLeafNode(lv_occurances_11_0, grammarAccess.getRequirementAccess().getOccurancesSTRINGTerminalRuleCall_6_2_0());
 					}
-					lv_occurances_11_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRequirementRule());
+							$current = createModelElement(grammarAccess.getRequirementRule());
 						}
-						add(
+						addWithLastConsumed(
 							$current,
 							"occurances",
 							lv_occurances_11_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -1966,20 +1871,19 @@ ruleRequirement returns [EObject current=null]
 				}
 				(
 					(
+						lv_occurances_13_0=RULE_STRING
 						{
-							newCompositeNode(grammarAccess.getRequirementAccess().getOccurancesEStringParserRuleCall_6_3_1_0());
+							newLeafNode(lv_occurances_13_0, grammarAccess.getRequirementAccess().getOccurancesSTRINGTerminalRuleCall_6_3_1_0());
 						}
-						lv_occurances_13_0=ruleEString
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getRequirementRule());
+								$current = createModelElement(grammarAccess.getRequirementRule());
 							}
-							add(
+							addWithLastConsumed(
 								$current,
 								"occurances",
 								lv_occurances_13_0,
-								"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-							afterParserOrEnumRuleCall();
+								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
 				)
@@ -2234,194 +2138,29 @@ ruleinstance returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getInstanceAccess().getInstanceAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='instance'
+		otherlv_0='"deploy" :'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getInstanceAccess().getInstanceKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getInstanceAccess().getDeployKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInstanceAccess().getParameter_nameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getInstanceAccess().getDeployEIntParserRuleCall_1_0());
 				}
-				lv_parameter_name_2_0=ruleEString
+				lv_deploy_1_0=ruleEInt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getInstanceRule());
 					}
 					set(
 						$current,
-						"parameter_name",
-						lv_parameter_name_2_0,
-						"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
+						"deploy",
+						lv_deploy_1_0,
+						"it.polimi.xtext.tosca4cloudifydsl.Dsl.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_3());
-		}
-		(
-			otherlv_4='type'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getInstanceAccess().getTypeKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getInstanceAccess().getTypeEStringParserRuleCall_4_1_0());
-					}
-					lv_type_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInstanceRule());
-						}
-						set(
-							$current,
-							"type",
-							lv_type_5_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='description'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getInstanceAccess().getDescriptionKeyword_5_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getInstanceAccess().getDescriptionEStringParserRuleCall_5_1_0());
-					}
-					lv_description_7_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInstanceRule());
-						}
-						set(
-							$current,
-							"description",
-							lv_description_7_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='value'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getInstanceAccess().getValueKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getInstanceAccess().getValueEStringParserRuleCall_6_1_0());
-					}
-					lv_value_9_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInstanceRule());
-						}
-						set(
-							$current,
-							"value",
-							lv_value_9_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_10='required'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getInstanceAccess().getRequiredKeyword_7_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getInstanceAccess().getRequiredEStringParserRuleCall_7_1_0());
-					}
-					lv_required_11_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInstanceRule());
-						}
-						set(
-							$current,
-							"required",
-							lv_required_11_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_12='default'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getInstanceAccess().getDefaultKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getInstanceAccess().getDefaultEStringParserRuleCall_8_1_0());
-					}
-					lv_default_13_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInstanceRule());
-						}
-						set(
-							$current,
-							"default",
-							lv_default_13_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='status'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getInstanceAccess().getStatusKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getInstanceAccess().getStatusEStringParserRuleCall_9_1_0());
-					}
-					lv_status_15_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getInstanceRule());
-						}
-						set(
-							$current,
-							"status",
-							lv_status_15_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_16='}'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_10());
-		}
 	)
 ;
 
@@ -2745,20 +2484,19 @@ ruleContained_in returns [EObject current=null]
 			}
 			(
 				(
+					lv_type_4_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getContained_inAccess().getTypeEStringParserRuleCall_3_1_0());
+						newLeafNode(lv_type_4_0, grammarAccess.getContained_inAccess().getTypeSTRINGTerminalRuleCall_3_1_0());
 					}
-					lv_type_4_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getContained_inRule());
+							$current = createModelElement(grammarAccess.getContained_inRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"type",
 							lv_type_4_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -2770,20 +2508,19 @@ ruleContained_in returns [EObject current=null]
 			}
 			(
 				(
+					lv_validSource_6_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getContained_inAccess().getValidSourceEStringParserRuleCall_4_1_0());
+						newLeafNode(lv_validSource_6_0, grammarAccess.getContained_inAccess().getValidSourceSTRINGTerminalRuleCall_4_1_0());
 					}
-					lv_validSource_6_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getContained_inRule());
+							$current = createModelElement(grammarAccess.getContained_inRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"validSource",
 							lv_validSource_6_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -2795,20 +2532,19 @@ ruleContained_in returns [EObject current=null]
 			}
 			(
 				(
+					lv_validTarget_8_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getContained_inAccess().getValidTargetEStringParserRuleCall_5_1_0());
+						newLeafNode(lv_validTarget_8_0, grammarAccess.getContained_inAccess().getValidTargetSTRINGTerminalRuleCall_5_1_0());
 					}
-					lv_validTarget_8_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getContained_inRule());
+							$current = createModelElement(grammarAccess.getContained_inRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"validTarget",
 							lv_validTarget_8_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -2974,20 +2710,19 @@ ruleConnected_to returns [EObject current=null]
 			}
 			(
 				(
+					lv_type_4_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getConnected_toAccess().getTypeEStringParserRuleCall_3_1_0());
+						newLeafNode(lv_type_4_0, grammarAccess.getConnected_toAccess().getTypeSTRINGTerminalRuleCall_3_1_0());
 					}
-					lv_type_4_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConnected_toRule());
+							$current = createModelElement(grammarAccess.getConnected_toRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"type",
 							lv_type_4_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -2999,20 +2734,19 @@ ruleConnected_to returns [EObject current=null]
 			}
 			(
 				(
+					lv_validSource_6_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getConnected_toAccess().getValidSourceEStringParserRuleCall_4_1_0());
+						newLeafNode(lv_validSource_6_0, grammarAccess.getConnected_toAccess().getValidSourceSTRINGTerminalRuleCall_4_1_0());
 					}
-					lv_validSource_6_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConnected_toRule());
+							$current = createModelElement(grammarAccess.getConnected_toRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"validSource",
 							lv_validSource_6_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -3024,20 +2758,19 @@ ruleConnected_to returns [EObject current=null]
 			}
 			(
 				(
+					lv_validTarget_8_0=RULE_STRING
 					{
-						newCompositeNode(grammarAccess.getConnected_toAccess().getValidTargetEStringParserRuleCall_5_1_0());
+						newLeafNode(lv_validTarget_8_0, grammarAccess.getConnected_toAccess().getValidTargetSTRINGTerminalRuleCall_5_1_0());
 					}
-					lv_validTarget_8_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConnected_toRule());
+							$current = createModelElement(grammarAccess.getConnected_toRule());
 						}
-						set(
+						setWithLastConsumed(
 							$current,
 							"validTarget",
 							lv_validTarget_8_0,
-							"it.polimi.xtext.tosca4cloudifydsl.Dsl.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
@@ -3161,6 +2894,39 @@ ruleConnected_to returns [EObject current=null]
 		otherlv_21='}'
 		{
 			newLeafNode(otherlv_21, grammarAccess.getConnected_toAccess().getRightCurlyBracketKeyword_8());
+		}
+	)
+;
+
+// Entry rule entryRuleEInt
+entryRuleEInt returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEIntRule()); }
+	iv_ruleEInt=ruleEInt
+	{ $current=$iv_ruleEInt.current.getText(); }
+	EOF;
+
+// Rule EInt
+ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			kw='-'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
+			}
+		)?
+		this_INT_1=RULE_INT
+		{
+			$current.merge(this_INT_1);
+		}
+		{
+			newLeafNode(this_INT_1, grammarAccess.getEIntAccess().getINTTerminalRuleCall_1());
 		}
 	)
 ;

@@ -27,124 +27,124 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Operation extends EObject {
-    /**
-     * Returns the value of the '<em><b>Operation name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Operation name</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Operation name</em>' attribute.
-     * @see #setOperation_name(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Operation_name()
-     * @model
-     * @generated
-     */
-    String getOperation_name();
+	/**
+	 * Returns the value of the '<em><b>Operation name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation name</em>' attribute.
+	 * @see #setOperation_name(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Operation_name()
+	 * @model
+	 * @generated
+	 */
+	String getOperation_name();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Operation#getOperation_name <em>Operation name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Operation name</em>' attribute.
-     * @see #getOperation_name()
-     * @generated
-     */
-    void setOperation_name(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Operation#getOperation_name <em>Operation name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation name</em>' attribute.
+	 * @see #getOperation_name()
+	 * @generated
+	 */
+	void setOperation_name(String value);
 
-    /**
-     * Returns the value of the '<em><b>Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Description</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Description</em>' attribute.
-     * @see #setDescription(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Description()
-     * @model
-     * @generated
-     */
-    String getDescription();
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Operation#getDescription <em>Description</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Description</em>' attribute.
-     * @see #getDescription()
-     * @generated
-     */
-    void setDescription(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Operation#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
-    /**
-     * Returns the value of the '<em><b>Operation has Input</b></em>' containment reference list.
-     * The list contents are of type {@link tosca4cloudify.Input}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Operation has Input</em>' containment reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Operation has Input</em>' containment reference list.
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Operation_hasInput()
-     * @model containment="true"
-     * @generated
-     */
-    EList<Input> getOperation_hasInput();
+	/**
+	 * Returns the value of the '<em><b>Operation has Input</b></em>' containment reference list.
+	 * The list contents are of type {@link tosca4cloudify.Input}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation has Input</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation has Input</em>' containment reference list.
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Operation_hasInput()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Input> getOperation_hasInput();
 
-    /**
-     * Returns the value of the '<em><b>Script</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Script</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Script</em>' attribute.
-     * @see #setScript(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Script()
-     * @model
-     * @generated
-     */
-    String getScript();
+	/**
+	 * Returns the value of the '<em><b>Script</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Script</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Script</em>' attribute.
+	 * @see #setScript(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Script()
+	 * @model
+	 * @generated
+	 */
+	String getScript();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Operation#getScript <em>Script</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Script</em>' attribute.
-     * @see #getScript()
-     * @generated
-     */
-    void setScript(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Operation#getScript <em>Script</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Script</em>' attribute.
+	 * @see #getScript()
+	 * @generated
+	 */
+	void setScript(String value);
 
-    /**
-     * Returns the value of the '<em><b>Executor</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Executor</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Executor</em>' attribute.
-     * @see #setExecutor(String)
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Executor()
-     * @model
-     * @generated
-     */
-    String getExecutor();
+	/**
+	 * Returns the value of the '<em><b>Executor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Executor</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Executor</em>' attribute.
+	 * @see #setExecutor(String)
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getOperation_Executor()
+	 * @model
+	 * @generated
+	 */
+	String getExecutor();
 
-    /**
-     * Sets the value of the '{@link tosca4cloudify.Operation#getExecutor <em>Executor</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Executor</em>' attribute.
-     * @see #getExecutor()
-     * @generated
-     */
-    void setExecutor(String value);
+	/**
+	 * Sets the value of the '{@link tosca4cloudify.Operation#getExecutor <em>Executor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Executor</em>' attribute.
+	 * @see #getExecutor()
+	 * @generated
+	 */
+	void setExecutor(String value);
 
 } // Operation

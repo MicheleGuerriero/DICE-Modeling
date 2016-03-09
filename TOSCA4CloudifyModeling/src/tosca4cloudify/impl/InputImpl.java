@@ -15,23 +15,23 @@ import tosca4cloudify.Tosca4cloudifyPackage;
  * @generated
  */
 public class InputImpl extends ParameterImpl implements Input {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected InputImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InputImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return Tosca4cloudifyPackage.Literals.INPUT;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Tosca4cloudifyPackage.Literals.INPUT;
+	}
 
 } //InputImpl

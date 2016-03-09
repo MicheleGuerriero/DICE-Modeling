@@ -15,23 +15,23 @@ import tosca4cloudify.Tosca4cloudifyPackage;
  * @generated
  */
 public class OutputImpl extends ParameterImpl implements Output {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected OutputImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OutputImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return Tosca4cloudifyPackage.Literals.OUTPUT;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Tosca4cloudifyPackage.Literals.OUTPUT;
+	}
 
 } //OutputImpl

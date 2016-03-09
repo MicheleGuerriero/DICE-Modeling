@@ -30,7 +30,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "it.polimi.xtext.tosca4cloudifydsl.Dsl"
-			fileExtensions = "dsl"
+			fileExtensions = "json"
 			referencedResource = "platform:/resource/TOSCA4CloudifyModeling/model/tosca4cloudify.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}

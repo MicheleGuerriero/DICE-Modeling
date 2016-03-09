@@ -12,7 +12,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import tosca4cloudify.Attribute;
 import tosca4cloudify.Connected_to;
 import tosca4cloudify.Contained_in;
@@ -22,6 +24,7 @@ import tosca4cloudify.Interface;
 import tosca4cloudify.Node_template;
 import tosca4cloudify.Operation;
 import tosca4cloudify.Output;
+import tosca4cloudify.Parameters;
 import tosca4cloudify.Property;
 import tosca4cloudify.Relationship;
 import tosca4cloudify.Requirement;
@@ -72,6 +75,12 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Tosca4cloudifyPackage.OUTPUT:
 				sequence_Output(context, (Output) semanticObject); 
 				return; 
+			case Tosca4cloudifyPackage.PARAMETER:
+				sequence_Parameter_Impl(context, (tosca4cloudify.Parameter) semanticObject); 
+				return; 
+			case Tosca4cloudifyPackage.PARAMETERS:
+				sequence_Parameters(context, (Parameters) semanticObject); 
+				return; 
 			case Tosca4cloudifyPackage.PROPERTY:
 				sequence_Property(context, (Property) semanticObject); 
 				return; 
@@ -100,17 +109,18 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Parameter returns Attribute
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
 	 *     (
-	 *         parameter_name=EString 
-	 *         type=EString? 
-	 *         description=EString? 
-	 *         value=EString? 
-	 *         required=EString? 
-	 *         default=EString? 
-	 *         status=EString?
+	 *         parameter_name=STRING 
+	 *         type=STRING? 
+	 *         description=STRING? 
+	 *         value=STRING? 
+	 *         required=STRING? 
+	 *         default=STRING? 
+	 *         status=STRING?
 	 *     )
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
@@ -125,9 +135,9 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         type=EString? 
-	 *         validSource=EString? 
-	 *         validTarget=EString? 
+	 *         type=STRING? 
+	 *         validSource=STRING? 
+	 *         validTarget=STRING? 
 	 *         (relation_haSourceInterface+=Source_interface relation_haSourceInterface+=Source_interface*)? 
 	 *         (relation_hasTargetInterface+=Target_interface relation_hasTargetInterface+=Target_interface*)?
 	 *     )
@@ -144,9 +154,9 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         type=EString? 
-	 *         validSource=EString? 
-	 *         validTarget=EString? 
+	 *         type=STRING? 
+	 *         validSource=STRING? 
+	 *         validTarget=STRING? 
 	 *         (relation_haSourceInterface+=Source_interface relation_haSourceInterface+=Source_interface*)? 
 	 *         (relation_hasTargetInterface+=Target_interface relation_hasTargetInterface+=Target_interface*)?
 	 *     )
@@ -171,9 +181,10 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Input returns Input
+	 *     Parameter returns Input
 	 *
 	 * Constraint:
-	 *     (parameter_name=EString type=STRING? description=STRING? default=STRING?)
+	 *     (parameter_name=STRING type=STRING? description=STRING? default=STRING?)
 	 */
 	protected void sequence_Input(ISerializationContext context, Input semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -230,19 +241,37 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Output returns Output
+	 *     Parameter returns Output
 	 *
 	 * Constraint:
-	 *     (
-	 *         parameter_name=EString 
-	 *         type=EString? 
-	 *         description=EString? 
-	 *         value=EString? 
-	 *         required=EString? 
-	 *         default=EString? 
-	 *         status=EString?
-	 *     )
+	 *     (parameter_name=STRING description=STRING? value=STRING?)
 	 */
 	protected void sequence_Output(ISerializationContext context, Output semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Parameter_Impl returns Parameter
+	 *     Parameter returns Parameter
+	 *
+	 * Constraint:
+	 *     (parameter_name=STRING value=STRING?)
+	 */
+	protected void sequence_Parameter_Impl(ISerializationContext context, tosca4cloudify.Parameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Parameters returns Parameters
+	 *
+	 * Constraint:
+	 *     (Paremeters_hasParameter+=Parameter Paremeters_hasParameter+=Parameter*)?
+	 */
+	protected void sequence_Parameters(ISerializationContext context, Parameters semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -252,16 +281,7 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Property returns Property
 	 *
 	 * Constraint:
-	 *     (
-	 *         parameter_name=EString 
-	 *         type=EString? 
-	 *         description=EString? 
-	 *         value=EString? 
-	 *         required=EString? 
-	 *         default=EString? 
-	 *         status=EString? 
-	 *         property_name=EString?
-	 *     )
+	 *     (property_name=STRING (property_hasParameters+=Parameters property_hasParameters+=Parameters*)?)
 	 */
 	protected void sequence_Property(ISerializationContext context, Property semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -292,7 +312,7 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Requirement returns Requirement
 	 *
 	 * Constraint:
-	 *     (requirement_name=EString? node=EString? capability_Type_name=EString? (occurances+=EString occurances+=EString*)?)
+	 *     (requirement_name=STRING? node=STRING? capability_Type_name=STRING? (occurances+=STRING occurances+=STRING*)?)
 	 */
 	protected void sequence_Requirement(ISerializationContext context, Requirement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -305,8 +325,7 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         tosca_definition_version=STRING? 
-	 *         description=STRING? 
+	 *         tosca_definitions_version=STRING? 
 	 *         (serviceTemplate_hasImport+=Import serviceTemplate_hasImport+=Import*)? 
 	 *         (interface_hasInput+=Input interface_hasInput+=Input*)? 
 	 *         service_hasNodeTemplate+=Node_template 
@@ -350,18 +369,16 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     instance returns instance
 	 *
 	 * Constraint:
-	 *     (
-	 *         parameter_name=EString 
-	 *         type=EString? 
-	 *         description=EString? 
-	 *         value=EString? 
-	 *         required=EString? 
-	 *         default=EString? 
-	 *         status=EString?
-	 *     )
+	 *     deploy=EInt
 	 */
 	protected void sequence_instance(ISerializationContext context, instance semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Tosca4cloudifyPackage.Literals.INSTANCE__DEPLOY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Tosca4cloudifyPackage.Literals.INSTANCE__DEPLOY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getInstanceAccess().getDeployEIntParserRuleCall_1_0(), semanticObject.getDeploy());
+		feeder.finish();
 	}
 	
 	

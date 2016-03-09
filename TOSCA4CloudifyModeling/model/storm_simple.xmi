@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tosca4cloudify:Service_Template
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tosca4cloudify="http://tosca4cloudify/1.0"
+    xsi:schemaLocation="http://tosca4cloudify/1.0 /home/polimi/git/ddsmTOSCA_WIP/TOSCA4CloudifyModeling/model/tosca4cloudify.ecore">
+  <serviceTemplate_hasImport/>
+  <interface_hasInput/>
+  <service_hasNodeTemplate/>
+</tosca4cloudify:Service_Template>

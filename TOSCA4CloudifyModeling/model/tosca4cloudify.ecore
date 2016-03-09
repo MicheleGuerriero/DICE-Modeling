@@ -50,14 +50,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//Parameter">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property_hasParameters"
+        upperBound="-1" eType="#//Parameters" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Parameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Parameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//Parameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="Requirement">
-    <eOperations name="EOperation0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirement_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="node" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="capability_Type_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -73,9 +75,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="executor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service_Template">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tosca_definition_version"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tosca_definitions_version"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceTemplate_hasImport"
         upperBound="-1" eType="#//Import" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceTemplate_hasOutput"
@@ -92,7 +93,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace_uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace_prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="instance" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="instance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deploy" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameters">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Paremeters_hasParameter"
         upperBound="-1" eType="#//Parameter" containment="true"/>

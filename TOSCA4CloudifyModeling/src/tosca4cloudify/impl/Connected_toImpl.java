@@ -15,23 +15,23 @@ import tosca4cloudify.Tosca4cloudifyPackage;
  * @generated
  */
 public class Connected_toImpl extends RelationshipImpl implements Connected_to {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected Connected_toImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Connected_toImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return Tosca4cloudifyPackage.Literals.CONNECTED_TO;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Tosca4cloudifyPackage.Literals.CONNECTED_TO;
+	}
 
 } //Connected_toImpl

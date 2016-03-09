@@ -15,23 +15,23 @@ import tosca4cloudify.Tosca4cloudifyPackage;
  * @generated
  */
 public class AttributeImpl extends ParameterImpl implements Attribute {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected AttributeImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return Tosca4cloudifyPackage.Literals.ATTRIBUTE;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Tosca4cloudifyPackage.Literals.ATTRIBUTE;
+	}
 
 } //AttributeImpl

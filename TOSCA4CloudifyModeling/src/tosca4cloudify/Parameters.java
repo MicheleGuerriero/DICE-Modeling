@@ -23,20 +23,20 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Parameters extends EObject {
-    /**
-     * Returns the value of the '<em><b>Paremeters has Parameter</b></em>' containment reference list.
-     * The list contents are of type {@link tosca4cloudify.Parameter}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Paremeters has Parameter</em>' containment reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Paremeters has Parameter</em>' containment reference list.
-     * @see tosca4cloudify.Tosca4cloudifyPackage#getParameters_Paremeters_hasParameter()
-     * @model containment="true"
-     * @generated
-     */
-    EList<Parameter> getParemeters_hasParameter();
+	/**
+	 * Returns the value of the '<em><b>Paremeters has Parameter</b></em>' containment reference list.
+	 * The list contents are of type {@link tosca4cloudify.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Paremeters has Parameter</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paremeters has Parameter</em>' containment reference list.
+	 * @see tosca4cloudify.Tosca4cloudifyPackage#getParameters_Paremeters_hasParameter()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getParemeters_hasParameter();
 
 } // Parameters

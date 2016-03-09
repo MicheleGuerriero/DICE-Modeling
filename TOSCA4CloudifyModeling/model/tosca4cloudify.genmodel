@@ -2,7 +2,7 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/TOSCA4CloudifyModeling/src" modelPluginID="TOSCA4CloudifyModeling"
     modelName="Tosca4cloudify" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>tosca4cloudify.ecore</foreignModel>
   <genPackages prefix="Tosca4cloudify" disposableProviderFactory="true" ecorePackage="tosca4cloudify.ecore#/">
@@ -44,6 +44,7 @@
     </genClasses>
     <genClasses ecoreClass="tosca4cloudify.ecore#//Property">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Property/property_name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tosca4cloudify.ecore#//Property/property_hasParameters"/>
     </genClasses>
     <genClasses ecoreClass="tosca4cloudify.ecore#//Attribute"/>
     <genClasses ecoreClass="tosca4cloudify.ecore#//Input"/>
@@ -53,7 +54,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Requirement/node"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Requirement/capability_Type_name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Requirement/occurances"/>
-      <genOperations ecoreOperation="tosca4cloudify.ecore#//Requirement/EOperation0"/>
     </genClasses>
     <genClasses ecoreClass="tosca4cloudify.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Operation/operation_name"/>
@@ -63,8 +63,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Operation/executor"/>
     </genClasses>
     <genClasses ecoreClass="tosca4cloudify.ecore#//Service_Template">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Service_Template/tosca_definition_version"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Service_Template/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Service_Template/tosca_definitions_version"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tosca4cloudify.ecore#//Service_Template/serviceTemplate_hasImport"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tosca4cloudify.ecore#//Service_Template/serviceTemplate_hasOutput"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tosca4cloudify.ecore#//Service_Template/interface_hasInput"/>
@@ -77,7 +76,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Import/namespace_uri"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//Import/namespace_prefix"/>
     </genClasses>
-    <genClasses ecoreClass="tosca4cloudify.ecore#//instance"/>
+    <genClasses ecoreClass="tosca4cloudify.ecore#//instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tosca4cloudify.ecore#//instance/deploy"/>
+    </genClasses>
     <genClasses ecoreClass="tosca4cloudify.ecore#//Parameters">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tosca4cloudify.ecore#//Parameters/Paremeters_hasParameter"/>
     </genClasses>

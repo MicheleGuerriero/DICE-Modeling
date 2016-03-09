@@ -7,7 +7,7 @@
 			class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="dsl"
+			extensions="json"
 			id="it.polimi.xtext.tosca4cloudifydsl.Dsl"
 			name="Dsl Editor">
 		</editor>
@@ -209,13 +209,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="dsl">
+			type="json">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 	    <resourceServiceProvider
 	        class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-	        uriExtension="dsl">
+	        uriExtension="json">
 	    </resourceServiceProvider>
 	</extension>
 	<!-- marker definitions for it.polimi.xtext.tosca4cloudifydsl.Dsl -->
@@ -243,7 +243,7 @@
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-			fileExtensions="dsl"/>
+			fileExtensions="json"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
@@ -386,24 +386,24 @@
 	<extension point="org.eclipse.compare.contentViewers">
 		<viewer id="it.polimi.xtext.tosca4cloudifydsl.Dsl.compare.contentViewers"
 			class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="dsl">
+			extensions="json">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="it.polimi.xtext.tosca4cloudifydsl.Dsl.compare.contentMergeViewers"
 			class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="dsl" label="Dsl Compare">
+			extensions="json" label="Dsl Compare">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="it.polimi.xtext.tosca4cloudifydsl.Dsl.editors.documentProviders"
 			class="it.polimi.xtext.tosca4cloudifydsl.ui.DslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="dsl">
+			extensions="json">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
 		<fileTypes
-			extension="dsl"
+			extension="json"
 			type="text">
 		</fileTypes>
 	</extension>
