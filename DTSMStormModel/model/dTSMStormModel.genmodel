@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/DTSMStormModel/src" modelPluginID="DTSMStormModel"
+    modelName="DTSMStormModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>dTSMStormModel.ecore</foreignModel>
+  <genPackages prefix="DTSMStormModel" disposableProviderFactory="true" ecorePackage="dTSMStormModel.ecore#/">
+    <genClasses ecoreClass="dTSMStormModel.ecore#//StormMain"/>
+    <genClasses ecoreClass="dTSMStormModel.ecore#//Bolt"/>
+    <genClasses ecoreClass="dTSMStormModel.ecore#//Spout"/>
+    <genClasses ecoreClass="dTSMStormModel.ecore#//Topology"/>
+    <genClasses ecoreClass="dTSMStormModel.ecore#//TopologyBuilder"/>
+    <genClasses ecoreClass="dTSMStormModel.ecore#//TopologyConfiguration"/>
+  </genPackages>
+</genmodel:GenModel>

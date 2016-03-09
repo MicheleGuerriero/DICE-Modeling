@@ -108,4 +108,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="LargeHost" eSuperTypes="#//VM"/>
   <eClassifiers xsi:type="ecore:EClass" name="StormNimbus" eSuperTypes="#//InternalComponent"/>
   <eClassifiers xsi:type="ecore:EClass" name="Zookeeper" eSuperTypes="#//InternalComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Kafka" eSuperTypes="#//InternalComponent"/>
 </ecore:EPackage>

@@ -21,6 +21,7 @@
     <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//Component">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceDeploymentSpecificModel.ecore#//Component/providedport"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceDeploymentSpecificModel.ecore#//Component/providedexecutionplatform"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//Component/name"/>
     </genClasses>
     <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//InternalComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceDeploymentSpecificModel.ecore#//InternalComponent/requiredport"/>
@@ -66,13 +67,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/minCores"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/minRam"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/minStorage"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/os"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/privateKey"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/providerSpecificTypeName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/securityGroup"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/sshKey"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/publicAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//VM/instances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diceDeploymentSpecificModel.ecore#//Component/name"/>
     </genClasses>
     <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//DDSM">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diceDeploymentSpecificModel.ecore#//DDSM/cloudelement"/>
@@ -98,5 +100,6 @@
     <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//LargeHost"/>
     <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//StormNimbus"/>
     <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//Zookeeper"/>
+    <genClasses ecoreClass="diceDeploymentSpecificModel.ecore#//Kafka"/>
   </genPackages>
 </genmodel:GenModel>
