@@ -50,9 +50,10 @@ Output returns Output:
 	
 	parameter_name=STRING ':'
 	'{'
-		//('type' type=EString)?
 		('"description" :' description=STRING)?
-		('value:' value=STRING)?
+		//('"type" :' type=EString)?
+		
+		('\n, "value" :' value=STRING)?
 		//('required' required=EString)?
 		//('default' default=EString)?
 		//('status' status=EString)?
@@ -60,13 +61,13 @@ Output returns Output:
 
 Input returns Input:
 	{Input}
-    parameter_name=STRING
+    parameter_name=STRING     '  :'
 	'{'
-		('type' type=STRING)?
-		('description' description=STRING)?
+	    ('"description" :' description=STRING)?
+		('\n, "type" :' type=STRING)?		
 		//('required' required=EString)?
 		//(value=STRING)?
-		('default' default=STRING)?
+		('\n, "default"  :' default=STRING)?
 		//('status' status=EString)?
 		
 	'}'

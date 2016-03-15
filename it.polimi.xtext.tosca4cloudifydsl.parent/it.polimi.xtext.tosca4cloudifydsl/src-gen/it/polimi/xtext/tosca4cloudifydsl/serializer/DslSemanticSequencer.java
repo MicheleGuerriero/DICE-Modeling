@@ -184,7 +184,7 @@ public class DslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Parameter returns Input
 	 *
 	 * Constraint:
-	 *     (parameter_name=STRING type=STRING? description=STRING? default=STRING?)
+	 *     (parameter_name=STRING description=STRING? type=STRING? default=STRING?)
 	 */
 	protected void sequence_Input(ISerializationContext context, Input semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

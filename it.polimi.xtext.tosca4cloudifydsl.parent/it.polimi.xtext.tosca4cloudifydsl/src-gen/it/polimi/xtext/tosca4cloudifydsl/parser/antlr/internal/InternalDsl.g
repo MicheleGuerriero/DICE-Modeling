@@ -549,7 +549,7 @@ ruleOutput returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6='value:'
+			otherlv_6='\n, "value" :'
 			{
 				newLeafNode(otherlv_6, grammarAccess.getOutputAccess().getValueKeyword_5_0());
 			}
@@ -620,44 +620,24 @@ ruleInput returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_2='  :'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getInputAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getInputAccess().getSpaceSpaceColonKeyword_2());
+		}
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getInputAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
-			otherlv_3='type'
+			otherlv_4='"description" :'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getInputAccess().getTypeKeyword_3_0());
+				newLeafNode(otherlv_4, grammarAccess.getInputAccess().getDescriptionKeyword_4_0());
 			}
 			(
 				(
-					lv_type_4_0=RULE_STRING
+					lv_description_5_0=RULE_STRING
 					{
-						newLeafNode(lv_type_4_0, grammarAccess.getInputAccess().getTypeSTRINGTerminalRuleCall_3_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getInputRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"type",
-							lv_type_4_0,
-							"org.eclipse.xtext.common.Terminals.STRING");
-					}
-				)
-			)
-		)?
-		(
-			otherlv_5='description'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getInputAccess().getDescriptionKeyword_4_0());
-			}
-			(
-				(
-					lv_description_6_0=RULE_STRING
-					{
-						newLeafNode(lv_description_6_0, grammarAccess.getInputAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0());
+						newLeafNode(lv_description_5_0, grammarAccess.getInputAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0());
 					}
 					{
 						if ($current==null) {
@@ -666,22 +646,46 @@ ruleInput returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"description",
-							lv_description_6_0,
+							lv_description_5_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_7='default'
+			otherlv_6='\n, "type" :'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getInputAccess().getDefaultKeyword_5_0());
+				newLeafNode(otherlv_6, grammarAccess.getInputAccess().getTypeKeyword_5_0());
 			}
 			(
 				(
-					lv_default_8_0=RULE_STRING
+					lv_type_7_0=RULE_STRING
 					{
-						newLeafNode(lv_default_8_0, grammarAccess.getInputAccess().getDefaultSTRINGTerminalRuleCall_5_1_0());
+						newLeafNode(lv_type_7_0, grammarAccess.getInputAccess().getTypeSTRINGTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getInputRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"type",
+							lv_type_7_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_8='\n, "default"  :'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getInputAccess().getDefaultKeyword_6_0());
+			}
+			(
+				(
+					lv_default_9_0=RULE_STRING
+					{
+						newLeafNode(lv_default_9_0, grammarAccess.getInputAccess().getDefaultSTRINGTerminalRuleCall_6_1_0());
 					}
 					{
 						if ($current==null) {
@@ -690,15 +694,15 @@ ruleInput returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"default",
-							lv_default_8_0,
+							lv_default_9_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
-		otherlv_9='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getInputAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_10, grammarAccess.getInputAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

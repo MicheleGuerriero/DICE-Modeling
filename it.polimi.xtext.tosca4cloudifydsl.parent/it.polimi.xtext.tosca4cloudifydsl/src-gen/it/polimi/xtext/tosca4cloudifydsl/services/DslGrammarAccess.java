@@ -337,14 +337,14 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Output:
 		//	{Output} parameter_name=STRING ':'
-		//	'{' ('"description" :' description=STRING)? ('value:' value=STRING)?
+		//	'{' ('"description" :' description=STRING)? ('\n, "value" :' value=STRING)?
 		//	//('required' required=EString)?
 		//	//('default' default=EString)?
 		//	//('status' status=EString)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Output} parameter_name=STRING ':' '{' ('"description" :' description=STRING)? ('value:' value=STRING)? //('required' required=EString)?
+		//{Output} parameter_name=STRING ':' '{' ('"description" :' description=STRING)? ('\n, "value" :' value=STRING)? //('required' required=EString)?
 		////('default' default=EString)?
 		////('status' status=EString)?
 		//'}'
@@ -377,10 +377,10 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_4_1_0() { return cDescriptionSTRINGTerminalRuleCall_4_1_0; }
 		
-		//('value:' value=STRING)?
+		//('\n, "value" :' value=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'value:'
+		//'\n, "value" :'
 		public Keyword getValueKeyword_5_0() { return cValueKeyword_5_0; }
 		
 		//value=STRING
@@ -401,30 +401,32 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cInputAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cParameter_nameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cParameter_nameSTRINGTerminalRuleCall_1_0 = (RuleCall)cParameter_nameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTypeSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
+		private final Keyword cSpaceSpaceColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cDescriptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cDescriptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cDescriptionAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cDefaultKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cDefaultAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cDefaultSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cDefaultAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cTypeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cTypeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cTypeSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cTypeAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cDefaultKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cDefaultAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cDefaultSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cDefaultAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Input:
-		//	{Input} parameter_name=STRING
-		//	'{' ('type' type=STRING)? ('description' description=STRING)? ('default' default=STRING)?
+		//	{Input} parameter_name=STRING '  :'
+		//	'{' ('"description" :' description=STRING)? ('\n, "type" :' type=STRING)? ('\n, "default"  :' default=STRING)?
 		//	//('status' status=EString)?
 		//
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Input} parameter_name=STRING '{' ('type' type=STRING)? ('description' description=STRING)? ('default' default=STRING)? //('status' status=EString)?
+		//{Input} parameter_name=STRING '  :' '{' ('"description" :' description=STRING)? ('\n, "type" :' type=STRING)?
+		//('\n, "default"  :' default=STRING)? //('status' status=EString)?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -437,25 +439,16 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getParameter_nameSTRINGTerminalRuleCall_1_0() { return cParameter_nameSTRINGTerminalRuleCall_1_0; }
 		
+		//'  :'
+		public Keyword getSpaceSpaceColonKeyword_2() { return cSpaceSpaceColonKeyword_2; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('type' type=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'type'
-		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
-		
-		//type=STRING
-		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
-		
-		//STRING
-		public RuleCall getTypeSTRINGTerminalRuleCall_3_1_0() { return cTypeSTRINGTerminalRuleCall_3_1_0; }
-		
-		//('description' description=STRING)?
+		//('"description" :' description=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'description'
+		//'"description" :'
 		public Keyword getDescriptionKeyword_4_0() { return cDescriptionKeyword_4_0; }
 		
 		//description=STRING
@@ -464,21 +457,33 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_4_1_0() { return cDescriptionSTRINGTerminalRuleCall_4_1_0; }
 		
-		//('default' default=STRING)?
+		//('\n, "type" :' type=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'default'
-		public Keyword getDefaultKeyword_5_0() { return cDefaultKeyword_5_0; }
+		//'\n, "type" :'
+		public Keyword getTypeKeyword_5_0() { return cTypeKeyword_5_0; }
 		
-		//default=STRING
-		public Assignment getDefaultAssignment_5_1() { return cDefaultAssignment_5_1; }
+		//type=STRING
+		public Assignment getTypeAssignment_5_1() { return cTypeAssignment_5_1; }
 		
 		//STRING
-		public RuleCall getDefaultSTRINGTerminalRuleCall_5_1_0() { return cDefaultSTRINGTerminalRuleCall_5_1_0; }
+		public RuleCall getTypeSTRINGTerminalRuleCall_5_1_0() { return cTypeSTRINGTerminalRuleCall_5_1_0; }
+		
+		//('\n, "default"  :' default=STRING)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'\n, "default"  :'
+		public Keyword getDefaultKeyword_6_0() { return cDefaultKeyword_6_0; }
+		
+		//default=STRING
+		public Assignment getDefaultAssignment_6_1() { return cDefaultAssignment_6_1; }
+		
+		//STRING
+		public RuleCall getDefaultSTRINGTerminalRuleCall_6_1_0() { return cDefaultSTRINGTerminalRuleCall_6_1_0; }
 		
 		////('status' status=EString)?
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class Node_templateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.polimi.xtext.tosca4cloudifydsl.Dsl.Node_template");
@@ -2192,7 +2197,7 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Output:
 	//	{Output} parameter_name=STRING ':'
-	//	'{' ('"description" :' description=STRING)? ('value:' value=STRING)?
+	//	'{' ('"description" :' description=STRING)? ('\n, "value" :' value=STRING)?
 	//	//('required' required=EString)?
 	//	//('default' default=EString)?
 	//	//('status' status=EString)?
@@ -2206,8 +2211,8 @@ public class DslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Input:
-	//	{Input} parameter_name=STRING
-	//	'{' ('type' type=STRING)? ('description' description=STRING)? ('default' default=STRING)?
+	//	{Input} parameter_name=STRING '  :'
+	//	'{' ('"description" :' description=STRING)? ('\n, "type" :' type=STRING)? ('\n, "default"  :' default=STRING)?
 	//	//('status' status=EString)?
 	//
 	//	'}';

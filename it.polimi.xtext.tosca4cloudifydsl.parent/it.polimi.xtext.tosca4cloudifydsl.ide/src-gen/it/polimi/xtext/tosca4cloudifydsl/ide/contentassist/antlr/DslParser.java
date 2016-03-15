@@ -53,9 +53,9 @@ public class DslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOutputAccess().getGroup_4(), "rule__Output__Group_4__0");
 					put(grammarAccess.getOutputAccess().getGroup_5(), "rule__Output__Group_5__0");
 					put(grammarAccess.getInputAccess().getGroup(), "rule__Input__Group__0");
-					put(grammarAccess.getInputAccess().getGroup_3(), "rule__Input__Group_3__0");
 					put(grammarAccess.getInputAccess().getGroup_4(), "rule__Input__Group_4__0");
 					put(grammarAccess.getInputAccess().getGroup_5(), "rule__Input__Group_5__0");
+					put(grammarAccess.getInputAccess().getGroup_6(), "rule__Input__Group_6__0");
 					put(grammarAccess.getNode_templateAccess().getGroup(), "rule__Node_template__Group__0");
 					put(grammarAccess.getNode_templateAccess().getGroup_4(), "rule__Node_template__Group_4__0");
 					put(grammarAccess.getNode_templateAccess().getGroup_5(), "rule__Node_template__Group_5__0");
@@ -140,9 +140,9 @@ public class DslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOutputAccess().getDescriptionAssignment_4_1(), "rule__Output__DescriptionAssignment_4_1");
 					put(grammarAccess.getOutputAccess().getValueAssignment_5_1(), "rule__Output__ValueAssignment_5_1");
 					put(grammarAccess.getInputAccess().getParameter_nameAssignment_1(), "rule__Input__Parameter_nameAssignment_1");
-					put(grammarAccess.getInputAccess().getTypeAssignment_3_1(), "rule__Input__TypeAssignment_3_1");
 					put(grammarAccess.getInputAccess().getDescriptionAssignment_4_1(), "rule__Input__DescriptionAssignment_4_1");
-					put(grammarAccess.getInputAccess().getDefaultAssignment_5_1(), "rule__Input__DefaultAssignment_5_1");
+					put(grammarAccess.getInputAccess().getTypeAssignment_5_1(), "rule__Input__TypeAssignment_5_1");
+					put(grammarAccess.getInputAccess().getDefaultAssignment_6_1(), "rule__Input__DefaultAssignment_6_1");
 					put(grammarAccess.getNode_templateAccess().getNode_template_nameAssignment_1(), "rule__Node_template__Node_template_nameAssignment_1");
 					put(grammarAccess.getNode_templateAccess().getTypeAssignment_4_1(), "rule__Node_template__TypeAssignment_4_1");
 					put(grammarAccess.getNode_templateAccess().getDescriptionAssignment_5_1(), "rule__Node_template__DescriptionAssignment_5_1");

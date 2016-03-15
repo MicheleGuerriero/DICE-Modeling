@@ -14,6 +14,14 @@
       file="http://www.getcloudify.org/spec/chef-plugin/1.2/plugin.yaml"/>
   <serviceTemplate_hasImport
       file="types/dice.yaml"/>
+  <serviceTemplate_hasOutput
+      parameter_name="outputtest1"
+      description="outputtest description"
+      value="outputvalue"/>
+  <interface_hasInput
+      parameter_name="testparam"
+      description="input Descroption"
+      default="2020"/>
   <service_hasNodeTemplate
       node_template_name="storm"
       type="dice.storm">
