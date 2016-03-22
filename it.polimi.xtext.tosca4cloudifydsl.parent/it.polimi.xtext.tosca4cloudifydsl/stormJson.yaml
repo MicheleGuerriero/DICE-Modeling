@@ -1,7 +1,16 @@
 imports: ['http://www.getcloudify.org/spec/cloudify/3.2.1/types.yaml', 'http://www.getcloudify.org/spec/openstack-plugin/1.2.1/plugin.yaml',
   'http://www.getcloudify.org/spec/chef-plugin/1.2/plugin.yaml', types/dice.yaml]
 inputs:
-  testparam: {default: '2020', description: input Descroption}
+  agent_user: {description: User for connecting to agent VMs\n}
+  chef_server: {description: Chef Server URL to use for provisioning\n}
+  chef_validation_key: {description: Chef Server validation key to use for provisioning\n}
+  chef_validation_user: {description: Chef Server validation user to use for provisioning\n}
+  chef_version: {description: Chef version to use for provisioning\n}
+  flavor_large: {description: Flavour of the VM to be used for large-sized VMs (e.g.
+      4GB RAM)\n}
+  flavor_med: {description: Flavour of the VM to be used for medium-sized VMs (e.g.
+      2GB RAM)\n}
+  image: {description: Image to be used when launching agent VMs\n}
 node_templates:
   storm:
     interfaces:
@@ -71,5 +80,7 @@ node_templates:
       - {name: ma_cloudify_zookeeper}
     type: cloudify.openstack.nodes.SecurityGroup
 outputs:
-  outputtest1: {description: outputtest description, value: outputvalue}
+  storm_nimbus_gui: {description: URL of the Storm nimbus gui, value: 'http://get_attribute:{storm_floating_ip,floating_ip_address}:8080'}
+  zookeeper_endpoint: {description: Debugging endpoint to see if zookeeper lives,
+    value: 'get_attribute:{zookeeper_floating_ip,floating_ip_address}'}
 tosca_definitions_version: cloudify_dsl_1_1
