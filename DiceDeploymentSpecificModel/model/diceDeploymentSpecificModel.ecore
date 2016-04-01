@@ -6,6 +6,8 @@
         eType="#//Resource" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" upperBound="-1"
         eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cloudElementId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -13,6 +15,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//CloudElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedport" upperBound="-1"
@@ -31,9 +34,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionPlatform">
     <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionPlatformId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredPort" eSuperTypes="#//Port"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedPort" eSuperTypes="#//Port"/>
@@ -52,6 +58,7 @@
         eType="#//RequiredExecutionPlatform"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedexecutionplatform"
         eType="#//ProvidedExecutionPlatform"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalComponent" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="provider" lowerBound="1"
@@ -62,6 +69,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" upperBound="-1"
         eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VM" eSuperTypes="#//ExternalComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="is64os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -88,6 +97,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
         eType="#//Provider" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LifeCycle" eSuperTypes="#//Resource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="downloadCommand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

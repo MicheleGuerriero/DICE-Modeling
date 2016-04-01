@@ -3,6 +3,7 @@
   <semanticResources>tosca4cloudify.ecore</semanticResources>
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
   <semanticResources>storm_simple.xmi</semanticResources>
+  <semanticResources>TOSCA.xmi</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_JUpe8OYZEeW9kNbXCHKs2w">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_MGi-0OYZEeW9kNbXCHKs2w" name="tosca4cloudify class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_MGi-0eYZEeW9kNbXCHKs2w" source="DANNOTATION_CUSTOMIZATION_KEY">

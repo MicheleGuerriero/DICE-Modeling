@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diceDeploymentSpecificModel:DDSM
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:diceDeploymentSpecificModel="http://ddsm/1.0"
+    xsi:schemaLocation="http://ddsm/1.0 diceDeploymentSpecificModel.ecore">
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:LargeHost"
+      cloudElementId="wr6y5"
+      name="main_host"
+      provider="rgbefb"
+      providerSpecificTypeName="">
+    <providedexecutionplatform
+        owner="wr6y5"
+        executionPlatformId="wr6y5-pexp1"/>
+  </cloudelement>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:Zookeeper"
+      cloudElementId="35yw56"
+      name="zookeeper">
+    <providedport
+        component="35yw56"
+        portId="35yw56-pp1"/>
+    <requiredexecutionplatform
+        owner="35yw56"
+        executionPlatformId="35yw56-rexp1"/>
+  </cloudelement>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:ExecutionBinding"
+      cloudElementId="zookeper2host"
+      requiredexecutionplatform="//@cloudelement.1/@requiredexecutionplatform.0"
+      providedexecutionplatform="//@cloudelement.0/@providedexecutionplatform.0"
+      name="zookeper2host"/>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:Relationship"
+      cloudElementId="kafka2zookeeper"
+      providedport="35yw56-pp1"
+      requiredport="kaf485u-rp1"
+      name="kafka2zookeeper"/>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:Kafka"
+      cloudElementId="kaf485u"
+      name="kafka">
+    <requiredport
+        component="kaf485u"
+        portId="kaf485u-rp1"/>
+    <requiredexecutionplatform
+        owner="kaf485u"
+        executionPlatformId="kaf485u-rexp1"/>
+  </cloudelement>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:ExecutionBinding"
+      cloudElementId="kafka2host"
+      requiredexecutionplatform="//@cloudelement.4/@requiredexecutionplatform.0"
+      providedexecutionplatform="//@cloudelement.0/@providedexecutionplatform.0"
+      name="kafka2host"/>
+  <provider
+      credentialsPath="/blabla"
+      name="Amazon ec2"
+      providerId="rgbefb"/>
+</diceDeploymentSpecificModel:DDSM>
