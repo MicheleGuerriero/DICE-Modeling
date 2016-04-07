@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<tosca4cloudify:Service_Template xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:tosca4cloudify="http://tosca4cloudify/1.0" tosca_definitions_version="cloudify_dsl_1_1">
+<tosca4cloudify:Service_Template xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tosca4cloudify="http://tosca4cloudify/1.0" tosca_definitions_version="cloudify_dsl_1_1">
   <serviceTemplate_hasImport file="insert here statically the list of DICE tosca imports"/>
-  <service_hasNodeTemplate node_template_name="main_host" type="dice.ddsm.Property">
-    <NodeTemplate_hasRelationship validSource="main_host"/>
+  <service_hasNodeTemplate node_template_name="main_host" type="DDSM!LargeHost"/>
+  <service_hasNodeTemplate node_template_name="zookeeper_host" type="DDSM!MediumHost"/>
+  <service_hasNodeTemplate node_template_name="zookeeper" type="DDSM!Zookeeper">
+    <NodeTemplate_hasRelationship xsi:type="tosca4cloudify:Contained_in" type="cloudify.relationships.contained_in" validSource="zookeeper_host"/>
   </service_hasNodeTemplate>
-  <service_hasNodeTemplate node_template_name="zookeeper" type="dice.ddsm.Property">
-    <NodeTemplate_hasRelationship validSource="zookeeper"/>
+  <service_hasNodeTemplate node_template_name="kafka" type="DDSM!Kafka">
+    <NodeTemplate_hasRelationship xsi:type="tosca4cloudify:Contained_in" type="cloudify.relationships.contained_in" validSource="main_host"/>
+    <NodeTemplate_hasRelationship xsi:type="tosca4cloudify:Connected_to" type="cloudify.relationships.connected_to" validSource="zookeeper"/>
   </service_hasNodeTemplate>
-  <service_hasNodeTemplate node_template_name="kafka" type="dice.ddsm.Property"/>
 </tosca4cloudify:Service_Template>

@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:diceDeploymentSpecificModel="http://ddsm/1.0"
-    xsi:schemaLocation="http://ddsm/1.0 diceDeploymentSpecificModel.ecore">
+    xsi:schemaLocation="http://ddsm/1.0 /DiceDeploymentSpecificModel/model/diceDeploymentSpecificModel.ecore">
   <cloudelement
       xsi:type="diceDeploymentSpecificModel:LargeHost"
       cloudElementId="wr6y5"
@@ -24,12 +24,12 @@
         portId="35yw56-pp1"/>
     <requiredexecutionplatform
         owner="35yw56"
-        executionPlatformId="35yw56-rexp1"/>
+        executionPlatformId="zooo838-pexp1"/>
   </cloudelement>
   <cloudelement
       xsi:type="diceDeploymentSpecificModel:ExecutionBinding"
       cloudElementId="zookeper2host"
-      requiredexecutionplatform="//@cloudelement.1/@requiredexecutionplatform.0"
+      requiredexecutionplatform="//@cloudelement.4/@requiredexecutionplatform.0"
       providedexecutionplatform="//@cloudelement.0/@providedexecutionplatform.0"
       name="zookeper2host"/>
   <cloudelement
@@ -55,6 +55,20 @@
       requiredexecutionplatform="//@cloudelement.4/@requiredexecutionplatform.0"
       providedexecutionplatform="//@cloudelement.0/@providedexecutionplatform.0"
       name="kafka2host"/>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:MediumHost"
+      cloudElementId="zooo838"
+      name="zookeeper_host"
+      provider="rgbefb"
+      providerSpecificTypeName="">
+    <providedexecutionplatform
+        owner="zooo838"
+        executionPlatformId="zooo838-pexp1"/>
+  </cloudelement>
+  <cloudelement
+      xsi:type="diceDeploymentSpecificModel:ExecutionBinding"
+      requiredexecutionplatform="//@cloudelement.1/@requiredexecutionplatform.0"
+      providedexecutionplatform="//@cloudelement.6/@providedexecutionplatform.0"/>
   <provider
       credentialsPath="/blabla"
       name="Amazon ec2"

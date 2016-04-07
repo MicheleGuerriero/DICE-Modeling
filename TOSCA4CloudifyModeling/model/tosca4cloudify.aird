@@ -578,17 +578,17 @@
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_pO0SEua0EeWl1sj-3CASBA" type="4001" element="_pNQL0Oa0EeWl1sj-3CASBA" source="_pN8vZOa0EeWl1sj-3CASBA" target="_pN0zkua0EeWl1sj-3CASBA">
             <children xmi:type="notation:Node" xmi:id="_pO05IOa0EeWl1sj-3CASBA" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pO05Iea0EeWl1sj-3CASBA" y="-10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pO05Iea0EeWl1sj-3CASBA" x="-11" y="-10"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_pO05Iua0EeWl1sj-3CASBA" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pO05I-a0EeWl1sj-3CASBA" y="10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pO05I-a0EeWl1sj-3CASBA" x="-12" y="6"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_pO05JOa0EeWl1sj-3CASBA" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pO05Jea0EeWl1sj-3CASBA" y="10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pO05Jea0EeWl1sj-3CASBA" x="-19" y="-3"/>
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_pO0SE-a0EeWl1sj-3CASBA" routing="Rectilinear"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_pO0SFOa0EeWl1sj-3CASBA" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pO0SFea0EeWl1sj-3CASBA" points="[0, 0, -180, 60]$[180, -60, 0, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pO0SFea0EeWl1sj-3CASBA" points="[0, 0, -164, 63]$[0, -20, -164, 43]$[164, -20, 0, 43]$[164, -63, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pO1gMOa0EeWl1sj-3CASBA" id="(0.5,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pO1gMea0EeWl1sj-3CASBA" id="(0.5,1.0)"/>
           </edges>
@@ -1073,7 +1073,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_pMc6kOa0EeWl1sj-3CASBA" name="deploy : EInt" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_pMc6kOa0EeWl1sj-3CASBA" name="deploy : EInt = " tooltipText="">
           <target xmi:type="ecore:EAttribute" href="tosca4cloudify.ecore#//instance/deploy"/>
           <semanticElements xmi:type="ecore:EAttribute" href="tosca4cloudify.ecore#//instance/deploy"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_pMevwOa0EeWl1sj-3CASBA" labelAlignment="LEFT" description="_pMeIsOa0EeWl1sj-3CASBA">
